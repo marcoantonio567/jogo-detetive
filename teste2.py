@@ -17,7 +17,7 @@ class JogoDetetive:
         }
         
         # Construir a árvore binária de perguntas
-        self.raiz_fase1 = Nodo(
+        self.raiz = Nodo(
             pergunta="A vítima estava no jardim?",
             resposta_sim=Nodo(
                 pergunta="Havia pegadas na terra?",
@@ -34,9 +34,6 @@ class JogoDetetive:
                 )
             )
         )
-
-        # Status do jogo
-        self.fase = 1
 
     def dar_contexto(self):
         print("Você é um detetive encarregado de resolver um misterioso assassinato.")
@@ -58,45 +55,34 @@ class JogoDetetive:
         else:
             return self.interrogar(nodo.resposta_nao)
     
-    def fase1(self):
+    def jogar(self):
+        self.dar_contexto()
         while True:
-            print("\nFase 1:")
-            print("1. Saber mais informações")
-            print("2. Acusar alguém")
+            print("O que você quer fazer?")
+            print("1. Interrogar pessoas e visitar locais")
+            print("2. Ver descrições dos suspeitos")
+            print("3. Acusar alguém")
+            print("4. Sair do jogo")
             opcao = input("Escolha uma opção: ").strip()
             
             if opcao == "1":
-                suspeito = self.interrogar(self.raiz_fase1)
+                suspeito = self.interrogar(self.raiz)
                 print(f"Após a investigação, você suspeita que o assassino é {suspeito}.")
             elif opcao == "2":
+                self.ver_descricoes()
+            elif opcao == "3":
                 suspeito = input("Quem você quer acusar? ").strip()
                 if suspeito in self.descricoes:
                     print(f"Você acusou {suspeito}.")
-                    if suspeito == "João":  # Supondo que João seja o assassino correto nesta fase
-                        print("Parabéns! Você acertou o assassino.")
-                        self.fase = 2
-                    else:
-                        print("Você acusou a pessoa errada. Tente novamente.")
+                    print("Investigação finalizada.\n")
+                    break
                 else:
                     print("Suspeito inválido. Tente novamente.")
+            elif opcao == "4":
+                print("Saindo do jogo. Até a próxima!")
+                break
             else:
                 print("Opção inválida. Tente novamente.")
-            if self.fase == 2:
-                break
-    
-    def fase2(self):
-        print("\nParabéns, você chegou à Fase 2!")
-        print("Nesta fase, você precisa coletar mais evidências e interrogar os suspeitos novamente para garantir a acusação correta.")
-        # Adicionar lógica para a fase 2 (pode ser uma nova árvore binária ou mais perguntas)
-        # Para simplificação, vamos apenas terminar o jogo aqui.
-        print("Jogo concluído! Você resolveu o caso.")
-    
-    def jogar(self):
-        self.dar_contexto()
-        while self.fase == 1:
-            self.fase1()
-        if self.fase == 2:
-            self.fase2()
 
 if __name__ == "__main__":
     jogo = JogoDetetive()

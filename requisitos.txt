@@ -1,0 +1,1 @@
+- ter um numero maximo de tentativas de acusar por fase 
