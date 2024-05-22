@@ -24,7 +24,8 @@ class BinaryTree:  # Define a classe BinaryTree para representar uma árvore bin
             print(node.left.question)
             sleep(0.5)
             print(node.right.question)
-            choice = input("Escolha [1/2]: ")
+            choice = input("Escolha [1/2]: -> ")
+            print("\n---------------------------------------------------------------------------------\n")
             if choice == "1" and node.left:
                 print(f"Você escolheu: {node.left.question}")
                 if node.left.final:
@@ -56,6 +57,7 @@ class BinaryTree:  # Define a classe BinaryTree para representar uma árvore bin
 
 def iniciar_jogo():  # Define a função para iniciar o jogo
     # Contexto da história
+    print("\n---------------------------------------------------------------------------------\n")
     print("Bem-vindo ao jogo de detetive!")  # Imprime uma mensagem de boas-vindas
     sleep(0.2)  # Aguarda um curto período de tempo
     print("Você é um famoso detetive chamado ao local de um misterioso assassinato.")  # Imprime uma introdução à história
@@ -70,7 +72,8 @@ def iniciar_jogo():  # Define a função para iniciar o jogo
     sleep(0.2)  # Aguarda um curto período de tempo
     print("Sua missão é coletar pistas, interrogar os suspeitos e resolver o caso.")  # Define a missão do jogador
     sleep(0.2)  # Aguarda um curto período de tempo
-    print("Vamos começar!\n")  # Indica o início do jogo
+    print("Vamos começar!")  # Indica o início do jogo
+    print("\n---------------------------------------------------------------------------------\n")
 
     # Criação da árvore com as perguntas e pistas
     arvore = BinaryTree()  # Cria uma nova árvore binária
@@ -126,5 +129,5 @@ iniciar_jogo()  # Chama a função para iniciar o jogo
 # ###########
 # -add um contexto melhor
 # -arrrumar o acusa (add o return)
-# -definir quando o jogo se encerra  OK
-# arrumar o fim  de jogo ao errar ou colocar um opção invalida
+# -definir quando o jogo se encerra  
+# arrumar o fim  de jogo ao errar ou colocar um opção invalida OK
