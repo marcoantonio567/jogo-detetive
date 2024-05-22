@@ -105,7 +105,7 @@ def iniciar_jogo():
 iniciar_jogo()
 
 
-###########
--add um contexto melhor
--arrrumar o acusa (add o return)
--definir quando o jogo se encerra
+# ###########
+# -add um contexto melhor
+# -arrrumar o acusa (add o return)
+# -definir quando o jogo se encerra
