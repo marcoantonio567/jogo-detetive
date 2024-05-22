@@ -79,30 +79,30 @@ def iniciar_jogo():  # Define a função para iniciar o jogo
                       "2 Você decide procurar mais informações.")  # Define a opção de procurar mais informações
 
     # Nível 2 : Define as opções para quando o jogador decide acusar alguém
-    root.left.left = Node("Você acusa a esposa, mas não há provas suficientes. Tente novamente.")  # Define a resposta quando o jogador acusa a esposa
-    root.left.right = Node("Você acusa o sócio, mas não há provas suficientes. Tente novamente.")  # Define a resposta quando o jogador acusa o sócio
+    root.left.left = Node("1 Você acusa a esposa, mas não há provas suficientes. Tente novamente.")  # Define a resposta quando o jogador acusa a esposa
+    root.left.right = Node("2 Você acusa o sócio, mas não há provas suficientes. Tente novamente.")  # Define a resposta quando o jogador acusa o sócio
 
     # Define as opções para quando o jogador decide procurar mais informações
     root.right.left = arvore.add("Você encontra uma pista importante: uma pegada de sapato.",  # Define a resposta quando o jogador encontra uma pista importante
-                                 "Você decide acusar alguém com base na pegada.",  # Define a opção de acusar alguém com base na pista
-                                 "Você continua procurando mais informações.")  # Define a opção de continuar procurando mais informações
+                                 "1 Você decide acusar alguém com base na pegada.",  # Define a opção de acusar alguém com base na pista
+                                 "2 Você continua procurando mais informações.")  # Define a opção de continuar procurando mais informações
 
     root.right.right = arvore.add("Você encontra um álibi que descarta um dos suspeitos.",  # Define a resposta quando o jogador encontra um álibi
-                                  "Você decide acusar alguém baseado no álibi.",  # Define a opção de acusar alguém com base no álibi
-                                  "Você continua procurando mais informações.")  # Define a opção de continuar procurando mais informações
+                                  "1 Você decide acusar alguém baseado no álibi.",  # Define a opção de acusar alguém com base no álibi
+                                  "2 Você continua procurando mais informações.")  # Define a opção de continuar procurando mais informações
 
     # Nível 3
     # Define as opções para quando o jogador decide acusar alguém com base na pegada
     root.right.left.left = Node("Você acusa a esposa com base na pegada, mas não há provas suficientes. Tente novamente.")  # Define a resposta quando o jogador acusa a esposa com base na pegada
     root.right.left.right = arvore.add("Você continua procurando e encontra uma testemunha.",  # Define a resposta quando o jogador encontra uma testemunha
-                                       "Você decide acusar alguém com base no depoimento da testemunha.",  # Define a opção de acusar alguém com base no depoimento da testemunha
-                                       "Você continua procurando mais informações.")  # Define a opção de continuar procurando mais informações
+                                       "1 Você decide acusar alguém com base no depoimento da testemunha.",  # Define a opção de acusar alguém com base no depoimento da testemunha
+                                       "2 Você continua procurando mais informações.")  # Define a opção de continuar procurando mais informações
 
     # Define as opções para quando o jogador decide acusar alguém com base no álibi
     root.right.right.left = Node("Você acusa o sócio com base no álibi, mas não há provas suficientes. Tente novamente.")  # Define a resposta quando o jogador acusa o sócio com base no álibi
     root.right.right.right = arvore.add("Você encontra um objeto pessoal do suspeito.",  # Define a resposta quando o jogador encontra um objeto pessoal do suspeito
-                                        "Você decide acusar alguém com base no objeto.",  # Define a opção de acusar alguém com base no objeto
-                                        "Você continua procurando mais informações.")  # Define a opção de continuar procurando mais informações
+                                        "1 Você decide acusar alguém com base no objeto.",  # Define a opção de acusar alguém com base no objeto
+                                        "2 Você continua procurando mais informações.")  # Define a opção de continuar procurando mais informações
 
     # Nível 4
     # Define as opções para quando o jogador decide acusar alguém com base no depoimento da testemunha
@@ -124,5 +124,5 @@ iniciar_jogo()  # Chama a função para iniciar o jogo
 # ###########
 # -add um contexto melhor
 # -arrrumar o acusa (add o return)
-# -definir quando o jogo se encerra
+# -definir quando o jogo se encerra  OK
 # arrumar o fim  de jogo ao errar ou colocar um opção invalida
