@@ -20,7 +20,9 @@ class BinaryTree:  # Define a classe BinaryTree para representar uma árvore bin
     def traverse(self, node):
         if node:
             print(node.question)
+            sleep(0.5)
             print(node.left.question)
+            sleep(0.5)
             print(node.right.question)
             choice = input("Escolha [1/2]: ")
             if choice == "1" and node.left:
