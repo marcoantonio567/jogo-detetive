@@ -29,7 +29,7 @@ class BinaryTree:  # Define a classe BinaryTree para representar uma árvore bin
             if choice == "1" and node.left:
                 print(f"Você escolheu: {node.left.question}")
                 if node.left.final:
-                    print(node.left.question)
+                    
                     if "resolve o caso" in node.left.question:
                         print("Parabéns! Você resolveu o caso!")
                     else:
