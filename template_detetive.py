@@ -1,103 +1,111 @@
-class Nodo:
-    def __init__(self, pergunta=None, resposta_sim=None, resposta_nao=None, suspeito=None, descricao=None):
-        self.pergunta = pergunta
-        self.resposta_sim = resposta_sim
-        self.resposta_nao = resposta_nao
-        self.suspeito = suspeito
-        self.descricao = descricao
+class Node:
+    def __init__(self, question=None, left=None, right=None, final=False):
+        self.question = question
+        self.left = left  # Opção 1
+        self.right = right  # Opção 2
+        self.final = final  # Indica se é um nó final onde a acusação pode ser feita
 
-class JogoDetetive:
-    def __init__(self):
-        # Descrições dos suspeitos
-        self.descricoes = {
-            "João": "João é um homem de 30 anos, trabalha como jardineiro e estava na cena do crime.",
-            "Maria": "Maria é uma mulher de 25 anos, vizinha da vítima e ouviu gritos na noite do crime.",
-            "Carlos": "Carlos é um homem de 40 anos, trabalha como eletricista e tem um histórico criminal.",
-            "Ana": "Ana é uma mulher de 35 anos, ex-namorada da vítima e foi vista perto da cena do crime."
-        }
-        
-        # Construir a árvore binária de perguntas
-        self.raiz_fase1 = Nodo(
-            pergunta="A vítima estava no jardim?",
-            resposta_sim=Nodo(
-                pergunta="Havia pegadas na terra?",
-                resposta_sim=Nodo(suspeito="João"),
-                resposta_nao=Nodo(suspeito="Carlos")
-            ),
-            resposta_nao=Nodo(
-                pergunta="Havia sinais de arrombamento?",
-                resposta_sim=Nodo(suspeito="Carlos"),
-                resposta_nao=Nodo(
-                    pergunta="Alguém ouviu gritos?",
-                    resposta_sim=Nodo(suspeito="Maria"),
-                    resposta_nao=Nodo(suspeito="Ana")
-                )
-            )
-        )
+class BinaryTree:
+    def __init__(self, root=None):
+        self.root = root
 
-        # Status do jogo
-        self.fase = 1
+    def add(self, question, left_question=None, right_question=None, final_left=False, final_right=False):
+        new_node = Node(question)
+        new_node.left = Node(left_question, final=final_left) if left_question else None
+        new_node.right = Node(right_question, final=final_right) if right_question else None
+        return new_node
 
-    def dar_contexto(self):
-        print("Você é um detetive encarregado de resolver um misterioso assassinato.")
-        print("A vítima foi encontrada em sua casa e há quatro suspeitos: João, Maria, Carlos e Ana.")
-        print("Interrogue as pessoas e visite os locais para juntar pistas e encontrar o assassino.\n")
-    
-    def ver_descricoes(self):
-        print("Descrições dos suspeitos:")
-        for suspeito, descricao in self.descricoes.items():
-            print(f"{suspeito}: {descricao}")
-        print()
-    
-    def interrogar(self, nodo):
-        if nodo.suspeito:
-            return nodo.suspeito
-        resposta = input(nodo.pergunta + " (sim/nao): ").strip().lower()
-        if resposta == "sim":
-            return self.interrogar(nodo.resposta_sim)
-        else:
-            return self.interrogar(nodo.resposta_nao)
-    
-    def fase1(self):
-        while True:
-            print("\nFase 1:")
-            print("1. Saber mais informações")
-            print("2. Acusar alguém")
-            opcao = input("Escolha uma opção: ").strip()
-            
-            if opcao == "1":
-                suspeito = self.interrogar(self.raiz_fase1)
-                print(f"Após a investigação, você suspeita que o assassino é {suspeito}.")
-            elif opcao == "2":
-                suspeito = input("Quem você quer acusar? ").strip()
-                if suspeito in self.descricoes:
-                    print(f"Você acusou {suspeito}.")
-                    if suspeito == "João":  # Supondo que João seja o assassino correto nesta fase
-                        print("Parabéns! Você acertou o assassino.")
-                        self.fase = 2
+    def traverse(self, node):
+        if node:
+            print(node.question)
+            print(node.left.question)
+            print(node.right.question)
+            choice = input("Escolha [1/2]: ")
+            if choice == "1" and node.left:
+                print(f"Você escolheu: {node.left.question}")
+                if node.left.final:
+                    print(node.left.question)
+                    if "resolve o caso" in node.left.question:
+                        print("Parabéns! Você resolveu o caso!")
                     else:
-                        print("Você acusou a pessoa errada. Tente novamente.")
+                        print("Não há provas suficientes. Voltando ao início do jogo...")
+                    self.traverse(self.root)
                 else:
-                    print("Suspeito inválido. Tente novamente.")
+                    self.traverse(node.left)
+            elif choice == "2" and node.right:
+                print(f"Você escolheu: {node.right.question}")
+                if node.right.final:
+                    print(node.right.question)
+                    if "resolve o caso" in node.right.question:
+                        print("Parabéns! Você resolveu o caso!")
+                    else:
+                        print("Não há provas suficientes. Voltando ao início do jogo...")
+                    self.traverse(self.root)
+                else:
+                    self.traverse(node.right)
             else:
-                print("Opção inválida. Tente novamente.")
-            if self.fase == 2:
-                break
-    
-    def fase2(self):
-        print("\nParabéns, você chegou à Fase 2!")
-        print("Nesta fase, você precisa coletar mais evidências e interrogar os suspeitos novamente para garantir a acusação correta.")
-        # Adicionar lógica para a fase 2 (pode ser uma nova árvore binária ou mais perguntas)
-        # Para simplificação, vamos apenas terminar o jogo aqui.
-        print("Jogo concluído! Você resolveu o caso.")
-    
-    def jogar(self):
-        self.dar_contexto()
-        while self.fase == 1:
-            self.fase1()
-        if self.fase == 2:
-            self.fase2()
+                print("Escolha inválida ou sem mais opções. Fim do jogo.")
+        else:
+            print("Fim do jogo.")
 
-if __name__ == "__main__":
-    jogo = JogoDetetive()
-    jogo.jogar()
+def iniciar_jogo():
+    # Contexto da história
+    print("Bem-vindo ao jogo de detetive!")
+    print("Você é um famoso detetive chamado ao local de um misterioso assassinato.")
+    print("A vítima é um empresário rico encontrado morto em sua mansão. Há três suspeitos principais:")
+    print("1. A esposa da vítima, que tinha um relacionamento conturbado com ele.")
+    print("2. O sócio da vítima, que estava em conflito devido a negócios.")
+    print("3. O jardineiro, que foi demitido recentemente e estava insatisfeito.")
+    print("Sua missão é coletar pistas, interrogar os suspeitos e resolver o caso.")
+    print("Vamos começar!\n")
+
+    # Criação da árvore com as perguntas e pistas
+    arvore = BinaryTree()
+    
+    # Nível 1
+    root = arvore.add("Você está no local do crime. O que você faz?" ,
+                      "1 Você decide acusar alguém.",
+                      "2 Você decide procurar mais informações.")
+    
+    # Nível 2
+    root.left.left = Node("Você acusa a esposa, mas não há provas suficientes. Tente novamente.")
+    root.left.right = Node("Você acusa o sócio, mas não há provas suficientes. Tente novamente.")
+    
+    root.right.left = arvore.add("Você encontra uma pista importante: uma pegada de sapato.",
+                                 "Você decide acusar alguém com base na pegada.",
+                                 "Você continua procurando mais informações.")
+    root.right.right = arvore.add("Você encontra um álibi que descarta um dos suspeitos.",
+                                  "Você decide acusar alguém baseado no álibi.",
+                                  "Você continua procurando mais informações.")
+    
+    # Nível 3
+    root.right.left.left = Node("Você acusa a esposa com base na pegada, mas não há provas suficientes. Tente novamente.")
+    root.right.left.right = arvore.add("Você continua procurando e encontra uma testemunha.",
+                                       "Você decide acusar alguém com base no depoimento da testemunha.",
+                                       "Você continua procurando mais informações.")
+    
+    root.right.right.left = Node("Você acusa o sócio com base no álibi, mas não há provas suficientes. Tente novamente.")
+    root.right.right.right = arvore.add("Você encontra um objeto pessoal do suspeito.",
+                                        "Você decide acusar alguém com base no objeto.",
+                                        "Você continua procurando mais informações.")
+    
+    # Nível 4
+    root.right.left.right.left = Node("Você acusa a esposa com base no depoimento, mas não há provas suficientes. Tente novamente.", final=True)
+    root.right.left.right.right = Node("Você encontra a arma do crime com impressões digitais do jardineiro, inocentando os outros. Você resolve o caso!", final=True)
+    
+    root.right.right.right.left = Node("Você acusa o sócio com base no objeto, mas não há provas suficientes. Tente novamente.", final=True)
+    root.right.right.right.right = Node("Você encontra um novo suspeito com um motivo forte, inocentando os outros. Você resolve o caso!", final=True)
+
+    arvore.root = root
+
+    # Início do jogo
+    arvore.traverse(arvore.root)
+
+# Iniciar o jogo
+iniciar_jogo()
+
+
+###########
+-add um contexto melhor
+-arrrumar o acusa (add o return)
+-definir quando o jogo se encerra

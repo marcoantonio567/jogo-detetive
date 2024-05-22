@@ -1,1 +1,15 @@
 - ter um numero maximo de tentativas de acusar por fase 
+
+-o detetive vai ser o usuario e vai desvendar o caso 
+
+-dar um contexto inicial da historia  no codigo 
+
+-gerar informações que ajudem o usuario a descobrir quem matou exemplo: ter opção de interrogar pessoas, visita o local etc...
+
+-criar uma opção onde o usuario pode ver as descrições dos suspeitos
+
+-dar opção do usuario acusar
+
+-escolher qual pessoa que voce vai interrogar
+
+-conectar uma arvore na outra 
