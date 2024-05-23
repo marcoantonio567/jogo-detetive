@@ -11,8 +11,8 @@ class colors:
     UNDERLINE = '\033[4m'
     END = '\033[0m'
 
-# Usa as cores definidas
-print(colors.RED + 'Este texto será vermelho!' + colors.END)
-print(colors.BOLD + 'Este texto será em negrito!' + colors.END)
-print(colors.UNDERLINE + 'Este texto será sublinhado!' + colors.END)
-print(colors.GREEN + 'Este texto será verde!' + colors.END)
+# # Usa as cores definidas
+# print(colors.RED + 'Este texto será vermelho!' + colors.END)
+# print(colors.BOLD + 'Este texto será em negrito!' + colors.END)
+# print(colors.UNDERLINE + 'Este texto será sublinhado!' + colors.END)
+# print(colors.GREEN + 'Este texto será verde!' + colors.END)

@@ -1,4 +1,6 @@
 from time import sleep  # Importa a função sleep do módulo time
+from cores import colors
+
 
 class Node:  # Define a classe Node para representar os nós da árvore binária
     def __init__(self, question=None, left=None, right=None, final=False):  # Inicializa um nó com uma pergunta, referências para os nós filhos esquerdo e direito, e um indicador se é um nó final
