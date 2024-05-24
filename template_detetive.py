@@ -81,8 +81,8 @@ def iniciar_jogo():  # Define a função para iniciar o jogo
 
     # Nível 1
     root = arvore.add("Você está no local do crime. O que você faz?" ,  # Define a pergunta inicial
-                      "1. Você decide acusar alguém.",  # Define a opção de acusar alguém
-                      "2. Você decide procurar mais informações.")  # Define a opção de procurar mais informações
+                      "Você decide acusar alguém.",  # Define a opção de acusar alguém
+                      "Você decide procurar mais informações.")  # Define a opção de procurar mais informações
 
     # Nível : Define as opções para quando o jogador decide acusar alguém
     root.left.left = Node("Você acusa a esposa, mas não há provas suficientes. Tente novamente.")  # Define a resposta quando o jogador acusa a esposa
