@@ -61,19 +61,20 @@ def iniciar_jogo():  # Define a função para iniciar o jogo
     print("\n---------------------------------------------------------------------------------\n")
     print(colors.GREEN+"Bem-vindo ao jogo de detetive!")  # Imprime uma mensagem de boas-vindas
     sleep(0.2)  # Aguarda um curto período de tempo
-    print("Você é um famoso detetive chamado ao local de um misterioso assassinato.")  # Imprime uma introdução à história
+    print("Você é um famoso detetive chamado ao local de um misterioso assassinato."+colors.END)  # Imprime uma introdução à história
     sleep(0.2)  # Aguarda um curto período de tempo
-    print("A vítima é um empresário rico encontrado morto em sua mansão. Há três suspeitos principais:"+colors.END)  # Apresenta a vítima e os suspeitos
+    print(colors.RED+"Você se encontra em uma noite chuvosa na cidade de Londres, em 1920. O silêncio é cortado pelo som ")  # Apresenta a vítima e os suspeitos
     sleep(0.2)  # Aguarda um curto período de tempo
-    print(colors.RED+"1. A esposa da vítima, que tinha um relacionamento conturbado com ele.")  # Descreve o primeiro suspeito
+    print("de trovões distantes, enquanto você, Detetive James Montgomery, é chamado para investigar um ")  # Descreve o primeiro suspeito
     sleep(0.2)  # Aguarda um curto período de tempo
-    print("2. O sócio da vítima, que estava em conflito devido a negócios.")  # Descreve o segundo suspeito
+    print("assassinato no Solar da Família Pembroke, uma mansão de grande prestígio.")  # Descreve o segundo suspeito
     sleep(0.2)  # Aguarda um curto período de tempo
-    print("3. O jardineiro, que foi demitido recentemente e estava insatisfeito."+colors.END)  # Descreve o terceiro suspeito
+    print("O Sr. Reginald Pembroke, um rico empresário e patriarca da família, foi encontrado morto em seu ")  # Descreve o terceiro suspeito
     sleep(0.2)  # Aguarda um curto período de tempo
-    print(colors.BLUE+"Sua missão é coletar pistas, interrogar os suspeitos e resolver o caso.")  # Define a missão do jogador
+    print("escritório. O cenário é sombrio, com móveis antiquados e uma atmosfera de segredo. A família e os ")  # Define a missão do jogador
     sleep(0.2)  # Aguarda um curto período de tempo
-    print("Vamos começar!"+colors.END)  # Indica o início do jogo
+    print("funcionários estão apreensivos, e cabe a você, Detetive Montgomery, desvendar este mistério."+colors.END)  # Indica o início do jogo
+    print(colors.BLUE+"Vamos começar!"+colors.END)  # Indica o início do jogo
     print("\n---------------------------------------------------------------------------------\n")
 
     # Criação da árvore com as perguntas e pistas
@@ -81,12 +82,15 @@ def iniciar_jogo():  # Define a função para iniciar o jogo
 
     # Nível 1
     root = arvore.add(colors.BLUE+"Você está no local do crime. O que você faz?"+colors.END ,  # Define a pergunta inicial
-                      colors.RED+"Você decide acusar alguém."+colors.END,  # Define a opção de acusar alguém
-                      colors.GREEN+"Você decide procurar mais informações."+colors.END)  # Define a opção de procurar mais informações
+                      colors.RED+"Informação 1: Você decide investigar a cena do crime em busca de pistas."+colors.END,  # Define a opção de acusar alguém
+                      colors.GREEN+"Informação 2: Você prefere começar interrogando os suspeitos em potencial."+colors.END)  # Define a opção de procurar mais informações
 
     # Nível : Define as opções para quando o jogador decide acusar alguém
-    root.left.left = Node("Você acusa a esposa, mas não há provas suficientes. Tente novamente.")  # Define a resposta quando o jogador acusa a esposa
-    root.left.right = Node("Você acusa o sócio, mas não há provas suficientes. Tente novamente.")  # Define a resposta quando o jogador acusa o sócio
+    root.left.left = arvore.add("Na cena do crime, a mesa está desarrumada, com papéis espalhados  e a lareira ainda crepitante. Há uma carta parcialmente queimada, identificada como uma fatura de empréstimo assinada por Reginald Pembroke no dia anterior ao assassinato.",
+                                "teste",
+                                "teste")
+
+    root.left.right = Node("Você acusa o sócio, mas não há provas suficientes. Tente novamente.")  
 
     # Define as opções para quando o jogador decide procurar mais informações
     root.right.left = arvore.add("Você encontra uma pista importante: uma pegada de sapato.",  # Define a resposta quando o jogador encontra uma pista importante
