@@ -26,10 +26,10 @@ class BinaryTree:  # Define a classe BinaryTree para representar uma árvore bin
             print(node.left.question)
             sleep(0.5)
             print(node.right.question)
-            choice = input("Escolha [1/2]: -> ")
+            choice = input(colors.DARKCYAN+"Escolha [1/2]: -> "+colors.END)
             print("\n---------------------------------------------------------------------------------\n")
             if choice == "1" and node.left:
-                print(f"Você escolheu: �� {node.left.question} ��")
+                print(f"Você escolheu: >> {node.left.question} <<")
                 if node.left.final:
                     
                     if "resolve o caso" in node.left.question:
@@ -40,7 +40,7 @@ class BinaryTree:  # Define a classe BinaryTree para representar uma árvore bin
                 else:
                     self.traverse(node.left)
             elif choice == "2" and node.right:
-                print(f"Você escolheu: {node.right.question}")
+                print(f'Você escolheu: {node.right.question}')
                 if node.right.final:
                     print(node.right.question)
                     if "resolve o caso" in node.right.question:
@@ -59,30 +59,30 @@ class BinaryTree:  # Define a classe BinaryTree para representar uma árvore bin
 def iniciar_jogo():  # Define a função para iniciar o jogo
     # Contexto da história
     print("\n---------------------------------------------------------------------------------\n")
-    print("Bem-vindo ao jogo de detetive!")  # Imprime uma mensagem de boas-vindas
+    print(colors.GREEN+"Bem-vindo ao jogo de detetive!")  # Imprime uma mensagem de boas-vindas
     sleep(0.2)  # Aguarda um curto período de tempo
     print("Você é um famoso detetive chamado ao local de um misterioso assassinato.")  # Imprime uma introdução à história
     sleep(0.2)  # Aguarda um curto período de tempo
-    print("A vítima é um empresário rico encontrado morto em sua mansão. Há três suspeitos principais:")  # Apresenta a vítima e os suspeitos
+    print("A vítima é um empresário rico encontrado morto em sua mansão. Há três suspeitos principais:"+colors.END)  # Apresenta a vítima e os suspeitos
     sleep(0.2)  # Aguarda um curto período de tempo
-    print("1. A esposa da vítima, que tinha um relacionamento conturbado com ele.")  # Descreve o primeiro suspeito
+    print(colors.RED+"1. A esposa da vítima, que tinha um relacionamento conturbado com ele.")  # Descreve o primeiro suspeito
     sleep(0.2)  # Aguarda um curto período de tempo
     print("2. O sócio da vítima, que estava em conflito devido a negócios.")  # Descreve o segundo suspeito
     sleep(0.2)  # Aguarda um curto período de tempo
-    print("3. O jardineiro, que foi demitido recentemente e estava insatisfeito.")  # Descreve o terceiro suspeito
+    print("3. O jardineiro, que foi demitido recentemente e estava insatisfeito."+colors.END)  # Descreve o terceiro suspeito
     sleep(0.2)  # Aguarda um curto período de tempo
-    print("Sua missão é coletar pistas, interrogar os suspeitos e resolver o caso.")  # Define a missão do jogador
+    print(colors.BLUE+"Sua missão é coletar pistas, interrogar os suspeitos e resolver o caso.")  # Define a missão do jogador
     sleep(0.2)  # Aguarda um curto período de tempo
-    print("Vamos começar!")  # Indica o início do jogo
+    print("Vamos começar!"+colors.END)  # Indica o início do jogo
     print("\n---------------------------------------------------------------------------------\n")
 
     # Criação da árvore com as perguntas e pistas
     arvore = BinaryTree()  # Cria uma nova árvore binária
 
     # Nível 1
-    root = arvore.add("Você está no local do crime. O que você faz?" ,  # Define a pergunta inicial
-                      "Você decide acusar alguém.",  # Define a opção de acusar alguém
-                      "Você decide procurar mais informações.")  # Define a opção de procurar mais informações
+    root = arvore.add(colors.BLUE+"Você está no local do crime. O que você faz?"+colors.END ,  # Define a pergunta inicial
+                      colors.RED+"Você decide acusar alguém."+colors.END,  # Define a opção de acusar alguém
+                      colors.GREEN+"Você decide procurar mais informações."+colors.END)  # Define a opção de procurar mais informações
 
     # Nível : Define as opções para quando o jogador decide acusar alguém
     root.left.left = Node("Você acusa a esposa, mas não há provas suficientes. Tente novamente.")  # Define a resposta quando o jogador acusa a esposa
