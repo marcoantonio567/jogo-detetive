@@ -13,3 +13,5 @@
 -escolher qual pessoa que voce vai interrogar
 
 -conectar uma arvore na outra 
+
+-arrumar o acusar quando ele vai acusar alguem da erro logo depois arrumar isso
