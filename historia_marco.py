@@ -128,11 +128,4 @@ def iniciar_jogo():  # Define a função para iniciar o jogo
     # Início do jogo
     arvore.traverse(arvore.root)  # Inicia o jogo a partir da raiz da árvore
 
-# Iniciar o jogo
-iniciar_jogo()  # Chama a função para iniciar o jogo
-
-# ###########
-# -add um contexto melhor
-# -arrrumar o acusa (add o return)
-# -definir quando o jogo se encerra  
-# arrumar o fim  de jogo ao errar ou colocar um opção invalida OK
+iniciar_jogo()  
