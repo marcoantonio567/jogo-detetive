@@ -21,20 +21,24 @@ class BinaryTree:
     def traverse(self, node):
         if node:
             print(node.question)
-            sleep(0.5)
+            sleep(0.2)
             if node.left and node.left.question:
+                sleep(0.2)
                 print(colors.LIGHTPURPLE+"1:"+colors.END, node.left.question)
             if node.right and node.right.question:
+                sleep(0.2)
                 print(colors.LIGHTPURPLE+"2:"+colors.END, node.right.question)
+            sleep(0.2)
             choice = input(colors.DARKCYAN + "Escolha [1/2]: -> " + colors.END)
             print("\n---------------------------------------------------------------------------------\n")
             if choice == "1" and node.left:
                 if node.left.final:
                     print(node.left.question)
                     if "resolve o caso" in node.left.question:
-                        print("Parabéns! Você resolveu o caso!")
+                        print(colors.LIGHTCYAN+"Parabéns! Você resolveu o caso!"+colors.END)
                     else:
-                        print("Não há provas suficientes. Voltando ao início do jogo...")
+                        print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início do jogo...\n"+colors.END)
+                        sleep(3)
                         self.traverse(self.root)
                 else:
                     self.traverse(node.left)
@@ -71,11 +75,12 @@ def iniciar_jogo():
     print(colors.BLUE + "Sua missão é coletar pistas, interrogar os suspeitos e resolver o caso.")
     sleep(0.2)
     print("Vamos começar!" + colors.END)
+    sleep(0.2)
     print("\n---------------------------------------------------------------------------------\n")
 
     arvore = BinaryTree()
 
-    root = arvore.add(colors.BLUE + "Você está no local do crime. O que você faz?" + colors.END,
+    root = arvore.add(colors.YELLOW + "Você está no local do crime. O que você faz?" + colors.END,
                       colors.RED + "Você decide acusar alguém." + colors.END,
                       colors.GREEN + "Você decide procurar mais informações." + colors.END)
 
@@ -90,7 +95,7 @@ def iniciar_jogo():
                                   "Você decide acusar alguém baseado no álibi.",
                                   "Você continua procurando mais informações.")
 
-    root.right.left.left = Node("Você acusa a esposa com base na pegada, mas não há provas suficientes. Tente novamente.", final=True)
+    root.right.left.left = Node("Você pode  acusa a esposa com base na pegada, mas não há provas suficientes.", final=True)
     root.right.left.right = arvore.add("Você continua procurando e encontra uma testemunha.",
                                        "Você decide acusar alguém com base no depoimento da testemunha.",
                                        "Você continua procurando mais informações.")
