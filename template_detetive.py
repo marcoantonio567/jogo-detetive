@@ -23,9 +23,9 @@ class BinaryTree:
             print(node.question)
             sleep(0.5)
             if node.left and node.left.question:
-                print("1:", node.left.question)
+                print(colors.LIGHTPURPLE+"1:"+colors.END, node.left.question)
             if node.right and node.right.question:
-                print("2:", node.right.question)
+                print(colors.LIGHTPURPLE+"2:"+colors.END, node.right.question)
             choice = input(colors.DARKCYAN + "Escolha [1/2]: -> " + colors.END)
             print("\n---------------------------------------------------------------------------------\n")
             if choice == "1" and node.left:
@@ -49,7 +49,7 @@ class BinaryTree:
                 else:
                     self.traverse(node.right)
             else:
-                print("Opção inválida. Por favor, escolha '1' ou '2'.")
+                print(colors.UNDERLINE+"Opção inválida. Por favor, escolha '1' ou '2'."+colors.END)
                 self.traverse(node)
         else:
             print("Fim do jogo.")
