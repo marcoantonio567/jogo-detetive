@@ -1,14 +1,17 @@
 from cores import colors
 from maquina import type_writer
 import time
+from animacoes import ascii_typing_animation , figlet_animation , barra
+
+
 def mostrar_menu():
     time.sleep(0.2)
-    print(colors.MAGENTA+"=" * 40+colors.END)
-    print(" " * 12 + colors.DARKRED+"Bem-vindo ao Jogo!"+colors.END)
+    wellcome = "Bem vindo ao Jogo !"
+    ascii_typing_animation(wellcome)
+
     time.sleep(0.2)
-    print(colors.MAGENTA+"=" * 40+colors.END)
     opcao1 = colors.ORANGE+"1. Jogar\n"+colors.END
-    opcao2 = colors.PURPLE+"2. Creditos\n"+colors.END
+    opcao2 = colors.PURPLE+"2. Créditos\n"+colors.END
     opcao3 = colors.GREEN+"3. Configurações\n"+colors.END
     opcao4 = colors.RED+"4. Sair\n"+colors.END
     time.sleep(0.2)
@@ -23,31 +26,32 @@ def mostrar_menu():
     print(colors.MAGENTA+"=" * 40+colors.END)
 
 def Jogar():
+    figlet_animation("Iniciando Jogo")
     print("\n" + "=" * 40)
-    print("Iniciando um novo jogo...")
-    print("=" * 40 + "\n")
+    barra()
 
 def Creditos():
+    figlet_animation("CREDITOS")
     print("\n" + "=" * 40)
-  
     print("Carregando créditos...")
+    barra()
+    
     print("=" * 40 + "\n")
     time.sleep(2)
-    mensagem = colors.CYAN+"este jogo foi desenvolvido por :"+colors.END
+    mensagem = colors.CYAN+"Este jogo foi desenvolvido por :"+colors.END
     type_writer(mensagem)
     time.sleep(1)
-    print(colors.random_color()+"\nmarco"+colors.END)
+    print(colors.random_color()+"\nMarco"+colors.END)
     time.sleep(0.2)
-    print(colors.random_color()+"joão"+colors.END)
+    print(colors.random_color()+"João"+colors.END)
     time.sleep(0.2)
-    print(colors.random_color()+"eville"+colors.END)
+    print(colors.random_color()+"Eville"+colors.END)
     time.sleep(0.2)
-    print(colors.random_color()+"julia"+colors.END)
+    print(colors.random_color()+"Julia"+colors.END)
     time.sleep(1)
-    
-   
 
 def configuracoes():
+    figlet_animation("CONFING")
     print("\n" + "=" * 40)
     print("Abrindo configurações...")
     print("=" * 40 + "\n")

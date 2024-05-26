@@ -65,6 +65,7 @@ class BinaryTree:
 def iniciar_jogo():
     print("\n---------------------------------------------------------------------------------\n")
     sleep(0.2)
+    #aqui começa o contexto inicial
     mensagem =colors.GREEN+ "Bem-vindo ao jogo de detetive!\n"
     type_writer(mensagem)
     sleep(0.2)
@@ -74,12 +75,15 @@ def iniciar_jogo():
     mensagem3 = "A vítima é um empresário rico encontrado morto em sua mansão. Há três suspeitos principais:\n"+ colors.END
     type_writer(mensagem3)
     sleep(0.2)
+    #aqui termina o contexto inical
+    #aqui começa a descrição dos suspeitos
     print(colors.RED + "1. A esposa da vítima, que tinha um relacionamento conturbado com ele.")
     sleep(0.2)
     print("2. O sócio da vítima, que estava em conflito devido a negócios.")
     sleep(0.2)
     print("3. O jardineiro, que foi demitido recentemente e estava insatisfeito." + colors.END)
     sleep(0.2)
+    #aqui termina a descrição dos suspeitos
     mensagem4 = colors.BLUE + "Sua missão é coletar pistas, interrogar os suspeitos e resolver o caso.\n"
     type_writer(mensagem4)
     sleep(0.2)
