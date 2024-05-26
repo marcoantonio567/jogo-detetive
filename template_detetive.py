@@ -40,6 +40,7 @@ class BinaryTree:
                     else:
                         print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início do jogo...\n"+colors.END)
                         sleep(3)
+                        print("\n---------------------------------------------------------------------------------\n")
                         self.traverse(self.root)
                 else:
                     self.traverse(node.left)
@@ -49,7 +50,9 @@ class BinaryTree:
                     if "resolve o caso" in node.right.question:
                         print("Parabéns! Você resolveu o caso!")
                     else:
-                        print("Não há provas suficientes. Voltando ao início do jogo...")
+                        print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início do jogo...\n"+colors.END)
+                        sleep(3)
+                        print("\n---------------------------------------------------------------------------------\n")
                         self.traverse(self.root)
                 else:
                     self.traverse(node.right)

@@ -1,4 +1,6 @@
 import random
+import time
+import sys
 
 # Define os códigos de escape ANSI para cores
 class colors:
@@ -9,7 +11,7 @@ class colors:
     GREEN = '\033[92m'
     YELLOW = '\033[93m'
     RED = '\033[91m'
-    
+   
     END = '\033[0m'
     
     WHITE = '\033[37m'
@@ -37,8 +39,7 @@ class colors:
         color_name = random.choice(color_attributes)
         return getattr(colors, color_name)
 
-#print(colors.random_color() + "Esta é uma cor aleatória!" + colors.END)
-# Usa as cores definidas
+
 """print(colors.RED + 'Este texto será vermelho!' + colors.END)
 print(colors.BOLD + 'Este texto será em negrito!' + colors.END)
 print(colors.UNDERLINE + 'Este texto será sublinhado!' + colors.END)
