@@ -1,6 +1,6 @@
 from time import sleep
 from cores import colors
-
+from maquina import type_writer
 class Node:
     def __init__(self, question=None, left=None, right=None, final=False):
         self.question = question
@@ -20,7 +20,7 @@ class BinaryTree:
 
     def traverse(self, node):
         if node:
-            print(node.question)
+            type_writer(node.question+"\n")
             sleep(0.2)
             if node.left and node.left.question:
                 sleep(0.2)
@@ -60,11 +60,15 @@ class BinaryTree:
 
 def iniciar_jogo():
     print("\n---------------------------------------------------------------------------------\n")
-    print(colors.GREEN + "Bem-vindo ao jogo de detetive!")
     sleep(0.2)
-    print("Você é um famoso detetive chamado ao local de um misterioso assassinato.")
+    mensagem =colors.GREEN+ "Bem-vindo ao jogo de detetive!\n"
+    type_writer(mensagem)
     sleep(0.2)
-    print("A vítima é um empresário rico encontrado morto em sua mansão. Há três suspeitos principais:" + colors.END)
+    mensagem2 = "Você é um famoso detetive chamado ao local de um misterioso assassinato.\n"
+    type_writer(mensagem2)
+    sleep(0.2)
+    mensagem3 = "A vítima é um empresário rico encontrado morto em sua mansão. Há três suspeitos principais:\n"+ colors.END
+    type_writer(mensagem3)
     sleep(0.2)
     print(colors.RED + "1. A esposa da vítima, que tinha um relacionamento conturbado com ele.")
     sleep(0.2)
@@ -72,9 +76,11 @@ def iniciar_jogo():
     sleep(0.2)
     print("3. O jardineiro, que foi demitido recentemente e estava insatisfeito." + colors.END)
     sleep(0.2)
-    print(colors.BLUE + "Sua missão é coletar pistas, interrogar os suspeitos e resolver o caso.")
+    mensagem4 = colors.BLUE + "Sua missão é coletar pistas, interrogar os suspeitos e resolver o caso.\n"
+    type_writer(mensagem4)
     sleep(0.2)
-    print("Vamos começar!" + colors.END)
+    mensagem5 = "Vamos começar!" + colors.END
+    type_writer(mensagem5)
     sleep(0.2)
     print("\n---------------------------------------------------------------------------------\n")
 
