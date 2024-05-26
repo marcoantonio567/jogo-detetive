@@ -20,14 +20,15 @@ class BinaryTree:
 
     def traverse(self, node):
         if node:
-            type_writer(node.question+"\n")
+            questao = colors.YELLOW+node.question+"\n"+colors.END
+            type_writer(questao)
             sleep(0.2)
             if node.left and node.left.question:
                 sleep(0.2)
-                print(colors.LIGHTPURPLE+"1:"+colors.END, node.left.question)
+                print(colors.LIGHTPURPLE+"1:"+colors.END,colors.random_color() + node.left.question+colors.END)
             if node.right and node.right.question:
                 sleep(0.2)
-                print(colors.LIGHTPURPLE+"2:"+colors.END, node.right.question)
+                print(colors.LIGHTPURPLE+"2:"+colors.END,colors.random_color() + node.right.question+colors.END)
             sleep(0.2)
             choice = input(colors.DARKCYAN + "Escolha [1/2]: -> " + colors.END)
             print("\n---------------------------------------------------------------------------------\n")
@@ -53,7 +54,7 @@ class BinaryTree:
                 else:
                     self.traverse(node.right)
             else:
-                print(colors.UNDERLINE+"Opção inválida. Por favor, escolha '1' ou '2'."+colors.END)
+                print(colors.RED+"Opção inválida. Por favor, escolha '1' ou '2'."+colors.END)
                 self.traverse(node)
         else:
             print("Fim do jogo.")

@@ -1,3 +1,5 @@
+import random
+
 # Define os códigos de escape ANSI para cores
 class colors:
     PURPLE = '\033[95m'
@@ -7,11 +9,9 @@ class colors:
     GREEN = '\033[92m'
     YELLOW = '\033[93m'
     RED = '\033[91m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
+    
     END = '\033[0m'
-    # Cores adicionais
-    BLACK = '\033[30m'
+    
     WHITE = '\033[37m'
     MAGENTA = '\033[35m'
     ORANGE = '\033[33m'
@@ -22,7 +22,22 @@ class colors:
     LIGHTCYAN = '\033[96m'
     LIGHTRED = '\033[91m'
     LIGHTPURPLE = '\033[95m'
+    DARKRED = '\033[31m'
+    DARKGREEN = '\033[32m'
+    DARKYELLOW = '\033[33m'
+    DARKBLUE = '\033[34m'
+    DARKMAGENTA = '\033[35m'
+    DARKWHITE = '\033[37m'
+    LIGHTYELLOW = '\033[93m'
+    LIGHTMAGENTA = '\033[95m'
 
+    @staticmethod
+    def random_color():
+        color_attributes = [attr for attr in dir(colors) if not callable(getattr(colors, attr)) and not attr.startswith("__")]
+        color_name = random.choice(color_attributes)
+        return getattr(colors, color_name)
+
+#print(colors.random_color() + "Esta é uma cor aleatória!" + colors.END)
 # Usa as cores definidas
 """print(colors.RED + 'Este texto será vermelho!' + colors.END)
 print(colors.BOLD + 'Este texto será em negrito!' + colors.END)
