@@ -66,22 +66,25 @@ def iniciar_jogo():
     print("\n---------------------------------------------------------------------------------\n")
     sleep(0.2)
     #aqui começa o contexto inicial
-    mensagem =colors.GREEN+ "Bem-vindo ao jogo de detetive!\n"
+    mensagem =colors.GREEN+ "Bem-vindo ao jogo de detetive, onde você assume o papel de um investigador renomado, convocado para desvendar um enigma sinistro.\n"
     type_writer(mensagem)
     sleep(0.2)
-    mensagem2 = "Você é um famoso detetive chamado ao local de um misterioso assassinato.\n"
+    mensagem2 = "A cena do crime é a mansão luxuosa de um empresário proeminente da cidade, conhecido por sua fortuna e influência.\n"
     type_writer(mensagem2)
     sleep(0.2)
-    mensagem3 = "A vítima é um empresário rico encontrado morto em sua mansão. Há três suspeitos principais:\n"+ colors.END
+    mensagem3 = "A vítima é o próprio magnata, encontrado sem vida em um dos salões extravagantes de sua casa. Seu corpo está imóvel, estendido no chão, enquanto o silêncio pesado paira sobre o ambiente.\n"
     type_writer(mensagem3)
+    sleep(0.2)
+    mensagem6 = "No entanto, o caso está longe de ser simples. Três suspeitos principais emergem da névoa do mistério, cada um com motivos intrigantes que os colocam sob a lente de sua investigação afiada:\n"+ colors.END
+    type_writer(mensagem6)
     sleep(0.2)
     #aqui termina o contexto inical
     #aqui começa a descrição dos suspeitos
-    print(colors.RED + "1. A esposa da vítima, que tinha um relacionamento conturbado com ele.")
+    print(colors.RED + "1. A esposa da vítima: Uma mulher de beleza estonteante, mas cujo relacionamento com o empresário era tumultuado e marcado por desavenças e segredos sombrios.")
     sleep(0.2)
-    print("2. O sócio da vítima, que estava em conflito devido a negócios.")
+    print("2.O sócio da vítima: Um parceiro de negócios próximo, cujas relações comerciais com o empresário se deterioraram rapidamente devido a conflitos sobre o destino da empresa e disputas financeiras.")
     sleep(0.2)
-    print("3. O jardineiro, que foi demitido recentemente e estava insatisfeito." + colors.END)
+    print("3.O jardineiro: recentemente demitido de seu trabalho na mansão do empresário. Sua demissão súbita deixou-o amargurado,alimentando ressentimentos que agora podem ter se transformado em algo muito mais sombrio." + colors.END)
     sleep(0.2)
     #aqui termina a descrição dos suspeitos
     mensagem4 = colors.BLUE + "Sua missão é coletar pistas, interrogar os suspeitos e resolver o caso.\n"
@@ -98,8 +101,8 @@ def iniciar_jogo():
                       colors.RED + "Você decide acusar alguém." + colors.END,
                       colors.GREEN + "Você decide procurar mais informações." + colors.END)
 
-    root.left.left = Node("Você acusa a esposa, mas não há provas suficientes. Tente novamente.", final=True)
-    root.left.right = Node("Você acusa o sócio, mas não há provas suficientes. Tente novamente.", final=True)
+    root.left.left = Node("Você pode acusar a esposa, mas não há provas suficientes.", final=True)
+    root.left.right = Node("Você pode acusa o sócio, mas não há provas suficientes.", final=True)
 
     root.right.left = arvore.add("Você encontra uma pista importante: uma pegada de sapato.",
                                  "Você decide acusar alguém com base na pegada.",
@@ -129,4 +132,4 @@ def iniciar_jogo():
 
     arvore.traverse(arvore.root)
 
-#iniciar_jogo()
+iniciar_jogo()
