@@ -38,7 +38,7 @@ class BinaryTree:
                     if "resolve o caso" in node.left.question:
                         print(colors.LIGHTCYAN+"Parabéns! Você resolveu o caso!"+colors.END)
                     else:
-                        print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início do jogo...\n"+colors.END)
+                        print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início da Fase...\n"+colors.END)
                         sleep(3)
                         print("\n---------------------------------------------------------------------------------\n")
                         self.traverse(self.root)
@@ -50,7 +50,7 @@ class BinaryTree:
                     if "resolve o caso" in node.right.question:
                         print("Parabéns! Você resolveu o caso!")
                     else:
-                        print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início do jogo...\n"+colors.END)
+                        print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início da Fase...\n"+colors.END)
                         sleep(3)
                         print("\n---------------------------------------------------------------------------------\n")
                         self.traverse(self.root)
@@ -132,7 +132,7 @@ def iniciar_jogo():
                                   "Você continua procurando mais informações.")
 
     root.right.left.left = Node("Você decide acusar Lydia Raven, a prima distante", final=True)
-    root.right.left.right = arvore.add("Você continua procurando e encontra uma testemunha.",
+    root.right.left.right = arvore.add("Você continua procurando mais informações sobre sua reação.",
                                        "Você decide acusar alguém com base no depoimento da testemunha.",
                                        "Você continua procurando mais informações.")
 
@@ -141,8 +141,8 @@ def iniciar_jogo():
                                         "Você decide acusar alguém com base no objeto.",
                                         "Você continua procurando mais informações.")
 
-    root.right.left.right.left = Node("Você acusa a esposa com base no depoimento, mas não há provas suficientes. Tente novamente.", final=True)
-    root.right.left.right.right = Node("Você encontra a arma do crime com impressões digitais do jardineiro, inocentando os outros. Você resolve o caso!", final=True)
+    root.right.left.right.left = Node("Você acusa Lydia Raven com bases nas informações que você possui.", final=True)
+    root.right.left.right.right = Node("Você continua a investigar profundamente esse caso.", final=True)
 
     root.right.right.right.left = Node("Você acusa o sócio com base no objeto, mas não há provas suficientes. Tente novamente.", final=True)
     root.right.right.right.right = Node("Você encontra um novo suspeito com um motivo forte, inocentando os outros. Você resolve o caso!", final=True)
