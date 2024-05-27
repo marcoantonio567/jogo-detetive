@@ -132,4 +132,4 @@ def iniciar_jogo():
 
     arvore.traverse(arvore.root)
 
-iniciar_jogo()
+#iniciar_jogo()
