@@ -78,12 +78,28 @@ def Fases():
             if escolha.isdigit():
                 escolha = int(escolha)
                 if 1 <= escolha <= 5:
+                    if escolha ==1:
+                        print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
+                        barra()
+                        break
+                    if escolha ==2:
+                        print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
+                        barra()
+                        break
+                    if escolha ==3:
+                        print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
+                        barra()
+                        break
+                    if escolha ==4:
+                        print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
+                        barra()
+                        break
                     if escolha == 5:
                         print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
                         barra()
                         main()
-                    else:
-                        print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
+                    # else:
+                    #     print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
                 else:
                     print(colors.CYAN + "Escolha inválida! Por favor, escolha um número entre 1 e 5." + colors.END)
             else:
