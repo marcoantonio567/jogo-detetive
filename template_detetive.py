@@ -66,40 +66,61 @@ def iniciar_jogo():
     print("\n---------------------------------------------------------------------------------\n")
     sleep(0.2)
     #aqui começa o contexto inicial
-    mensagem =colors.GREEN+ "Bem-vindo ao jogo de detetive!\n"
+    mensagem =colors.GREEN+ "BEM-VINDO AO JOGO DE DETETIVE!\n"
     type_writer(mensagem)
+    mensagem1 =colors.RED + "Obs: se errar a acusação, volta para o inicio do jogo. \n"
+    type_writer(mensagem1)
     sleep(0.2)
-    mensagem2 = "Você é um famoso detetive chamado ao local de um misterioso assassinato.\n"
+    mensagem2 =colors.GREEN + "\nUm detetive famoso, Arthur Blake, é chamado para resolver um assassinato na vila de Ravenwood, \n"
     type_writer(mensagem2)
     sleep(0.2)
-    mensagem3 = "A vítima é um empresário rico encontrado morto em sua mansão. Há três suspeitos principais:\n"+ colors.END
+    mensagem3 =colors.GREEN+ "onde Lorde Henry Blackwood foi encontrado morto em sua mansão. Blake chega à vila em uma \n"+ colors.END
     type_writer(mensagem3)
+    sleep(0.2)
+    mensagem4 =colors.GREEN+ "noite sombria e é recebido por uma atmosfera carregada de tensão e segredos. Os moradores locais \n"+ colors.END
+    type_writer(mensagem4)
+    sleep(0.2)
+    mensagem5 =colors.GREEN+ "esperam que ele resolva o caso e traga paz à comunidade. \n"+ colors.END
+    type_writer(mensagem5)
+    sleep(0.2)
+    mensagem6 =colors.GREEN+ "\nO detetive Arthur Blake enfrenta dois suspeitos principais: a viúva Alice Blackwood\n"+ colors.END
+    type_writer(mensagem6)
+    sleep(0.2)
+    mensagem6 =colors.GREEN + "e o filho Victor Blackwood. Ambos têm motivos para querer a morte de Lorde Henry Blackwood,\n"+ colors.END
+    type_writer(mensagem6)
+    sleep(0.2)
+    mensagem6 =colors.GREEN+ "o patriarca da família. Enquanto Alice pode ter sido motivada por conflitos conjugais e financeiros,\n"+ colors.END
+    type_writer(mensagem6)
+    sleep(0.2)
+    mensagem6 =colors.GREEN+ "Victor pode ter agido para assumir o controle dos negócios da família.\n"+ colors.END
+    type_writer(mensagem6)
+    sleep(0.2)
+    mensagem6 =colors.DARKRED+ "\nOs suspeitos:\n"+ colors.END
+    type_writer(mensagem6)
     sleep(0.2)
     #aqui termina o contexto inical
     #aqui começa a descrição dos suspeitos
-    print(colors.RED + "1. A esposa da vítima, que tinha um relacionamento conturbado com ele.")
+    print(colors.CYAN + "1. Alice Blackwood: Viúva com acesso à mansão e possíveis conflitos conjugais e financeiros.")
     sleep(0.2)
-    print("2. O sócio da vítima, que estava em conflito devido a negócios.")
-    sleep(0.2)
-    print("3. O jardineiro, que foi demitido recentemente e estava insatisfeito." + colors.END)
+    print("2. Victor Blackwood: Filho com desavenças sobre os negócios da família e acesso à mansão." + colors.END)
     sleep(0.2)
     #aqui termina a descrição dos suspeitos
-    mensagem4 = colors.BLUE + "Sua missão é coletar pistas, interrogar os suspeitos e resolver o caso.\n"
-    type_writer(mensagem4)
+    mensagem7 = colors.BLUE + "\nSua missão é coletar pistas, interrogar os suspeitos e resolver o caso.\n"
+    type_writer(mensagem7)
     sleep(0.2)
-    mensagem5 = "Vamos começar!" + colors.END
-    type_writer(mensagem5)
+    mensagem8 = "Vamos começar!\n" + colors.END
+    type_writer(mensagem8)
     sleep(0.2)
     print("\n---------------------------------------------------------------------------------\n")
 
     arvore = BinaryTree()
 
     root = arvore.add(colors.YELLOW + "Você está no local do crime. O que você faz?" + colors.END,
-                      colors.RED + "Você decide acusar alguém." + colors.END,
+                      colors.GREEN + "Você decide acusar alguém." + colors.END,
                       colors.GREEN + "Você decide procurar mais informações." + colors.END)
 
-    root.left.left = Node("Você acusa a esposa, mas não há provas suficientes. Tente novamente.", final=True)
-    root.left.right = Node("Você acusa o sócio, mas não há provas suficientes. Tente novamente.", final=True)
+    root.left.left = Node(colors.BLUE+ "Você acusa a viúva,  Alice Blackwood."+colors.END, final=True)
+    root.left.right = Node(colors.BLUE+"Você acusa o filho, Victor Blackwood"+colors.END, final=True)
 
     root.right.left = arvore.add("Você encontra uma pista importante: uma pegada de sapato.",
                                  "Você decide acusar alguém com base na pegada.",
