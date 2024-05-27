@@ -1,7 +1,7 @@
 from cores import colors
 from maquina import type_writer
 import time
-from animacoes import ascii_typing_animation , figlet_animation , barra
+from animacoes import ascii_typing_animation , figlet_animation , barra , barra2
 from historia_marco import iniciar_jogo
 
 def mostrar_menu():
@@ -14,15 +14,15 @@ def mostrar_menu():
     opcao2 = colors.PURPLE+"2. Créditos\n"+colors.END
     opcao3 = colors.GREEN+"3. Fases\n"+colors.END
     opcao4 = colors.RED+"4. Sair\n"+colors.END
-    time.sleep(0.2)
+    #time.sleep(0.2)
     type_writer(opcao1)
-    time.sleep(0.2)
+    #time.sleep(0.2)
     type_writer(opcao2)
-    time.sleep(0.2)
+    #time.sleep(0.2)
     type_writer(opcao3)
-    time.sleep(0.2)
+    #time.sleep(0.2)
     type_writer(opcao4)
-    time.sleep(0.2)
+    #time.sleep(0.2)
     print(colors.MAGENTA+"=" * 40+colors.END)
 
 def Jogar():
@@ -51,22 +51,48 @@ def Creditos():
     time.sleep(1)
 
 def Fases():
-    figlet_animation("CONFING")
+    figlet_animation("Fases")
     print("\n" + "=" * 40)
     print("Abrindo Fases...")
-    print("=" * 40 + "\n")
+    print("=" * 40 )
+    barra2()
     def historias():
-        msg = input("Escolha a historia que voce deseja iniciar: ")
-        type_writer(msg)
-        time.sleep(1)
-        print(colors.random_color()+"\nJulia"+colors.END)
-        time.sleep(0.2)
-        print(colors.random_color()+"Eville"+colors.END)
-        time.sleep(0.2)
-        print(colors.random_color()+"Marco"+colors.END)
-        time.sleep(0.2)
-        print(colors.random_color()+"João"+colors.END)
-        time.sleep(1)
+        while True:
+            msg = colors.CYAN + "Escolha a história que você deseja iniciar: " + colors.END
+            type_writer(msg)
+            time.sleep(1)
+            print(colors.random_color() + "\n1. Julia" + colors.END)
+            time.sleep(0.2)
+            print(colors.random_color() + "2. Eville" + colors.END)
+            time.sleep(0.2)
+            print(colors.random_color() + "3. Marco" + colors.END)
+            time.sleep(0.2)
+            print(colors.random_color() + "4. João" + colors.END)
+            time.sleep(0.2)
+            print(colors.random_color() + "5. Voltar" + colors.END)
+            time.sleep(1)
+            print(colors.DARKBLUE + "Escolha uma opção (1-5): " + colors.END)
+
+            escolha = input()
+
+            if escolha.isdigit():
+                escolha = int(escolha)
+                if 1 <= escolha <= 5:
+                    if escolha == 5:
+                        print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
+                        barra()
+                        main()
+                    else:
+                        print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
+                else:
+                    print(colors.CYAN + "Escolha inválida! Por favor, escolha um número entre 1 e 5." + colors.END)
+            else:
+                print(colors.CYAN + "Entrada inválida! Por favor, digite um número." + colors.END)
+
+            time.sleep(1)
+        
+        
+    historias()
         
 
 def main():
@@ -82,6 +108,7 @@ def main():
             Creditos()
         elif escolha == '3':
             Fases()
+            break
         elif escolha == '4':
             print("\n" + "=" * 40)
             print("Saindo do jogo...")
