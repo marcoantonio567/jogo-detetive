@@ -62,7 +62,7 @@ class BinaryTree:
         else:
             print("Fim do jogo.")
 
-def iniciar_jogo():
+def jogo():
     print("\n---------------------------------------------------------------------------------\n")
     sleep(0.2)
     #aqui começa o contexto inicial
@@ -154,4 +154,4 @@ def iniciar_jogo():
 
     arvore.traverse(arvore.root)
 
-iniciar_jogo()
+#jogo()

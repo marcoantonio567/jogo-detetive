@@ -62,7 +62,7 @@ class BinaryTree:
         else:
             print("Fim do jogo.")
 
-def iniciar_jogo():
+def iniciar():
     print("\n---------------------------------------------------------------------------------\n")
     sleep(0.2)
     mensagem =colors.GREEN+ "BEM-VINDO AO JOGO DE DETETIVE!\n"
@@ -150,4 +150,4 @@ def iniciar_jogo():
 
     arvore.traverse(arvore.root)
 
-iniciar_jogo()
+#iniciar()
