@@ -38,7 +38,7 @@ class BinaryTree:
                     if "resolve o caso" in node.left.question:
                         print(colors.LIGHTCYAN+"Parabéns! Você resolveu o caso!"+colors.END)
                     else:
-                        print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início da Fase...\n"+colors.END)
+                        print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início da fase...\n"+colors.END)
                         sleep(3)
                         print("\n---------------------------------------------------------------------------------\n")
                         self.traverse(self.root)
@@ -47,8 +47,8 @@ class BinaryTree:
             elif choice == "2" and node.right:
                 if node.right.final:
                     print(node.right.question)
-                    if "resolve o caso" in node.right.question:
-                        print("Parabéns! Você resolveu o caso!")
+                    if "Seguir para a PARTE 2" in node.right.question:
+                        print(colors.GREEN+"Você está sendo direcionado para a fase 2 do jogo" +colors.END)
                     else:
                         print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início da Fase...\n"+colors.END)
                         sleep(3)
@@ -122,29 +122,29 @@ def iniciar_jogo():
     root.left.left = Node(colors.BLUE+ "Você acusa a esposa, Alice "+colors.END, final=True)
     root.left.right = Node(colors.BLUE+"Você acusa o filho, Victor "+colors.END, final=True)
 
-    root.right.left = arvore.add("Você encontra uma pegada de sapato e decide seguir ela",
+    root.right.left = arvore.add("Você encontra uma pegada de sapato e decide seguir",
                                  "Você decide acusar alguém com base na pegada.",
                                  "Você continua procurando mais informações.")
 
-    root.right.right = arvore.add("Você encontra um álibi que descarta um dos suspeitos. Seguir esta pista:",
+    root.right.right = arvore.add("Você encontra um álibi que descarta um dos suspeitos e decide seguir",
                                   "Você decide acusar alguém baseado no álibi.",
                                   "Você continua procurando mais informações.")
 
-    root.right.left.left = Node("Você decide acusar Lydia Raven, a prima distante", final=True)
-    root.right.left.right = arvore.add("Você continua procurando mais informações sobre sua reação.",
+    root.right.left.left = Node("Você decide acusar a esposa com base na pegada de sapato", final=True)
+    root.right.left.right = arvore.add("Você decide continuar o jogo",
                                        "Você decide acusar alguém com base no depoimento da testemunha.",
                                        "Você continua procurando mais informações.")
 
-    root.right.right.left = Node("Você acusa o sócio com base no álibi, mas não há provas suficientes. Tente novamente.", final=True)
-    root.right.right.right = arvore.add("Você encontra um objeto pessoal do suspeito.",
+    root.right.right.left = Node("Você acusa a esposa, Alice", final=True)
+    root.right.right.right = arvore.add("Você decide continuar o jogo.",
                                         "Você decide acusar alguém com base no objeto.",
                                         "Você continua procurando mais informações.")
 
-    root.right.left.right.left = Node("Você acusa Lydia Raven com bases nas informações que você possui.", final=True)
-    root.right.left.right.right = Node("Você continua a investigar profundamente esse caso.", final=True)
+    root.right.left.right.left = Node("Você decide acusar o filho com base nas informações que você possui.", final=True)
+    root.right.left.right.right = Node("Seguir para a PARTE 2", final=True)
 
-    root.right.right.right.left = Node("Você acusa o sócio com base no objeto, mas não há provas suficientes. Tente novamente.", final=True)
-    root.right.right.right.right = Node("Você encontra um novo suspeito com um motivo forte, inocentando os outros. Você resolve o caso!", final=True)
+    root.right.right.right.left = Node("Você decide acusar o filho com base nas informações que você possui.", final=True)
+    root.right.right.right.right = Node("Seguir para a PARTE 2", final=True)
 
     arvore.root = root
 
