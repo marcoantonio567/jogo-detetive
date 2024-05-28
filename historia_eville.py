@@ -38,7 +38,7 @@ class BinaryTree:
                     if "resolve o caso" in node.left.question:
                         print(colors.LIGHTCYAN+"Parabéns! Você resolveu o caso!"+colors.END)
                     else:
-                        print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início da Fase...\n"+colors.END)
+                        print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início da fase...\n"+colors.END)
                         sleep(3)
                         print("\n---------------------------------------------------------------------------------\n")
                         self.traverse(self.root)
@@ -47,8 +47,8 @@ class BinaryTree:
             elif choice == "2" and node.right:
                 if node.right.final:
                     print(node.right.question)
-                    if "resolve o caso" in node.right.question:
-                        print("Parabéns! Você resolveu o caso!")
+                    if "Você decide continuar investigando." in node.right.question:
+                        print(colors.GREEN+"E você descobre que há falta de registros da sua presença no dia do crime." +colors.END)
                     else:
                         print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início da Fase...\n"+colors.END)
                         sleep(3)
@@ -70,6 +70,9 @@ def iniciar_jogo():
     type_writer(mensagem)
     mensagem1 =colors.RED + "Obs: se errar a acusação, volta para o inicio do jogo. \n"
     type_writer(mensagem1)
+    sleep(0.2)
+    mensagem11 =colors.RED + "-- O culpado é quem você menos espera -- \n"
+    type_writer(mensagem11)
     sleep(0.2)
     mensagem2 =colors.GREEN + "\nArthur Blake, o detetive, achou uma adaga bonita no escritório de Lorde Blackwood. Ele mostrou \n"
     type_writer(mensagem2)
@@ -123,7 +126,7 @@ def iniciar_jogo():
     root.left.left = Node(colors.BLUE+ "Você acusa a prima, Lydia Raven."+colors.END, final=True)
     root.left.right = Node(colors.BLUE+"Você acusa o mordomo, Tyler Thompson."+colors.END, final=True)
 
-    root.right.left = arvore.add("Lydia Raven, a prima distante, brilhou os olhos intensamente e despertou desconfiança.",
+    root.right.left = arvore.add("Lydia Raven, a prima distante, brilhou os olhos intensamente, mas manteve sua posição enigmática.",
                                  "Você decide acusar alguém com base na pegada.",
                                  "Você continua procurando mais informações.")
 
@@ -132,20 +135,20 @@ def iniciar_jogo():
                                   "Você continua procurando mais informações.")
 
     root.right.left.left = Node("Você decide acusar Lydia Raven, a prima distante", final=True)
-    root.right.left.right = arvore.add("Você continua procurando mais informações sobre sua reação.",
+    root.right.left.right = arvore.add("Você questioná-la sobre sua reação.",
                                        "Você decide acusar alguém com base no depoimento da testemunha.",
                                        "Você continua procurando mais informações.")
 
-    root.right.right.left = Node("Você acusa o sócio com base no álibi, mas não há provas suficientes. Tente novamente.", final=True)
-    root.right.right.right = arvore.add("Você encontra um objeto pessoal do suspeito.",
+    root.right.right.left = Node("Você acusa o mordomo, Tyler Thompson", final=True)
+    root.right.right.right = arvore.add("Você endaga o mordomo sobre sua reação.",
                                         "Você decide acusar alguém com base no objeto.",
                                         "Você continua procurando mais informações.")
 
-    root.right.left.right.left = Node("Você acusa Lydia Raven com bases nas informações que você possui.", final=True)
-    root.right.left.right.right = Node("Você continua a investigar profundamente esse caso.", final=True)
+    root.right.left.right.left = Node("Você acusa Lydia Raven, por ter recebido um sorriso enigmático em resposta.", final=True)
+    root.right.left.right.right = Node("Você decide continuar investigando.", final=True)
 
-    root.right.right.right.left = Node("Você acusa o sócio com base no objeto, mas não há provas suficientes. Tente novamente.", final=True)
-    root.right.right.right.right = Node("Você encontra um novo suspeito com um motivo forte, inocentando os outros. Você resolve o caso!", final=True)
+    root.right.right.right.left = Node("Você acusa Tyler Thompson, por seu silencio, alegando ser fiel ao código de conduta que regia sua posição ", final=True)
+    root.right.right.right.right = Node("Você decide continuar investigando.", final=True)
 
     arvore.root = root
 
