@@ -1,12 +1,13 @@
-from time import sleep
-from cores import colors
-from maquina import type_writer
-class Node:
-    def __init__(self, question=None, left=None, right=None, final=False):
+from time import sleep   #importa a função que causa essas pausas entre uma parte e outra do código, ajuda a melhor a UX
+from cores import colors   #módulo personalizado que faz alteração de cores no terminal
+from maquina import type_writer   #módulo personalizado que dá o efeito de maquina de escrever no texto do terminal
+
+class Node: #cria a classe dos nós e define seus parâmetros
+    def __init__(self, question=None, left=None, right=None, final=False): #nele ficará a questão, o filho esquerdo, o filho direito e o final
         self.question = question
         self.left = left
         self.right = right
-        self.final = final
+        self.final = final  #o final serve pra verifucar a cada questão e resposta se este é o final do jogo ou
 
 class BinaryTree:
     def __init__(self, root=None):
@@ -92,10 +93,10 @@ def iniciar_jogo():
     mensagem6 =colors.GREEN + "de tensão.Lá está a mansão Blackwood, com sua arquitetura gótica e sombria, que é o cenário perfeito\n"+ colors.END
     type_writer(mensagem6)
     sleep(0.2)
-    mensagem6 =colors.DARKRED+ "para um mistério de assassinato. Os habitantes da vila, embora desconfiados de estranhos,\n"+ colors.END
+    mensagem6 =colors.GREEN+ "para um mistério de assassinato. Os habitantes da vila, embora desconfiados de estranhos,\n"+ colors.END
     type_writer(mensagem6)
     sleep(0.2)
-    mensagem6 =colors.DARKRED+ "esperam ansiosamente que você resolva o caso e traga paz à sua comunidade.\n"+ colors.END
+    mensagem6 =colors.GREEN+ "esperam ansiosamente que você resolva o caso e traga paz à sua comunidade.\n"+ colors.END
     type_writer(mensagem6)
     sleep(0.2)
     mensagem6 =colors.DARKRED+ "\n Os possíveis suspeitos são:\n"+ colors.END
@@ -136,13 +137,13 @@ def iniciar_jogo():
                                   "Você decide acusar alguém baseado no álibi.",
                                   "Você continua procurando mais informações.")
 
-    root.right.left.left = Node("Você pode  acusa a esposa com base na pegada, mas não há provas suficientes.", final=True)
-    root.right.left.right = arvore.add("Você continua procurando e encontra uma testemunha.",
+    root.right.left.left = Node("Você pode acusar alguém base na pegada", final=True)
+    root.right.left.right = arvore.add("Seguir para a PARTE 2 DO JOGO ",
                                        "Você decide acusar alguém com base no depoimento da testemunha.",
                                        "Você continua procurando mais informações.")
 
-    root.right.right.left = Node("Você acusa o sócio com base no álibi, mas não há provas suficientes. Tente novamente.", final=True)
-    root.right.right.right = arvore.add("Você encontra um objeto pessoal do suspeito.",
+    root.right.right.left = Node("Você pode acusar alguém com base no álibi", final=True)
+    root.right.right.right = arvore.add("Seguir para a PARTE 2 DO JOGO ",
                                         "Você decide acusar alguém com base no objeto.",
                                         "Você continua procurando mais informações.")
 
@@ -157,3 +158,4 @@ def iniciar_jogo():
     arvore.traverse(arvore.root)
 
 iniciar_jogo()
+
