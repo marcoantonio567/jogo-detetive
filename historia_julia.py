@@ -1,12 +1,13 @@
-from time import sleep
-from cores import colors
-from maquina import type_writer
-class Node:
-    def __init__(self, question=None, left=None, right=None, final=False):
+from time import sleep   #importa a função que causa essas pausas entre uma parte e outra do código, ajuda a melhor a UX
+from cores import colors   #módulo personalizado que faz alteração de cores no terminal
+from maquina import type_writer   #módulo personalizado que dá o efeito de maquina de escrever no texto do terminal
+
+class Node: #cria a classe dos nós e define seus parâmetros
+    def __init__(self, question=None, left=None, right=None, final=False): #nele ficará a questão, o filho esquerdo, o filho direito e o final
         self.question = question
         self.left = left
         self.right = right
-        self.final = final
+        self.final = final  #o final serve pra verifucar a cada questão e resposta se este é o final do jogo ou
 
 class BinaryTree:
     def __init__(self, root=None):
@@ -71,33 +72,39 @@ def iniciar_jogo():
     mensagem1 =colors.RED + "Obs: se errar a acusação, volta para o inicio do jogo. \n"
     type_writer(mensagem1)
     sleep(0.2)
-    mensagem2 =colors.GREEN + "\nUm detetive famoso, Arthur Blake, é chamado para resolver um assassinato na vila de Ravenwood, \n"
+    mensagem2 =colors.GREEN + "\nEm uma pequena e sombria vila chamada Ravenwood, conhecida por suas florestas densas e neblina constante, \n"
     type_writer(mensagem2)
     sleep(0.2)
-    mensagem3 =colors.GREEN+ "onde Lorde Henry Blackwood foi encontrado morto em sua mansão. Blake chega à vila em uma \n"+ colors.END
+    mensagem3 =colors.GREEN+ "você, Arthur Blake, um famoso detetive, reside. Natural de uma cidade vizinha, você foi chamado para\n"+ colors.END
     type_writer(mensagem3)
     sleep(0.2)
-    mensagem4 =colors.GREEN+ "noite sombria e é recebido por uma atmosfera carregada de tensão e segredos. Os moradores locais \n"+ colors.END
+    mensagem4 =colors.GREEN+ "resolver um caso perturbador que abalou os moradores locais. O corpo de Lorde Henry Blackwood, \n"+ colors.END
     type_writer(mensagem4)
     sleep(0.2)
-    mensagem5 =colors.GREEN+ "esperam que ele resolva o caso e traga paz à comunidade. \n"+ colors.END
+    mensagem5 =colors.GREEN+ "o patriarca de uma das famílias mais influentes da vila, foi encontrado em sua mansão isolada,\n"+ colors.END
     type_writer(mensagem5)
     sleep(0.2)
-    mensagem6 =colors.GREEN+ "\nO detetive Arthur Blake enfrenta dois suspeitos principais: a viúva Alice Blackwood\n"+ colors.END
+    mensagem6 =colors.GREEN+ "e as circunstâncias em torno de sua morte são misteriosas. Ao chegar em Ravenwood em uma\n"+ colors.END
     type_writer(mensagem6)
     sleep(0.2)
-    mensagem6 =colors.GREEN + "e o filho Victor Blackwood. Ambos têm motivos para querer a morte de Lorde Henry Blackwood,\n"+ colors.END
+    mensagem6 =colors.GREEN + "uma noite chuvosa, você é recebido pelo som inquietante das árvores ao vento, onde a atmosfera é carregada\n"+ colors.END
     type_writer(mensagem6)
     sleep(0.2)
-    mensagem6 =colors.GREEN+ "o patriarca da família. Enquanto Alice pode ter sido motivada por conflitos conjugais e financeiros,\n"+ colors.END
+    mensagem6 =colors.GREEN + "de tensão.Lá está a mansão Blackwood, com sua arquitetura gótica e sombria, que é o cenário perfeito\n"+ colors.END
     type_writer(mensagem6)
     sleep(0.2)
-    mensagem6 =colors.GREEN+ "Victor pode ter agido para assumir o controle dos negócios da família.\n"+ colors.END
+    mensagem6 =colors.GREEN+ "para um mistério de assassinato. Os habitantes da vila, embora desconfiados de estranhos,\n"+ colors.END
     type_writer(mensagem6)
     sleep(0.2)
-    mensagem6 =colors.DARKRED+ "\nOs suspeitos:\n"+ colors.END
+    mensagem6 =colors.GREEN+ "esperam ansiosamente que você resolva o caso e traga paz à sua comunidade.\n"+ colors.END
     type_writer(mensagem6)
     sleep(0.2)
+    mensagem6 =colors.DARKRED+ "\n Os possíveis suspeitos são:\n"+ colors.END
+    type_writer(mensagem6)
+    sleep(0.2)
+
+
+    
     #aqui termina o contexto inical
     #aqui começa a descrição dos suspeitos
     print(colors.CYAN + "1. Alice Blackwood: Viúva com acesso à mansão e possíveis conflitos conjugais e financeiros.")
@@ -130,13 +137,13 @@ def iniciar_jogo():
                                   "Você decide acusar alguém baseado no álibi.",
                                   "Você continua procurando mais informações.")
 
-    root.right.left.left = Node("Você pode  acusa a esposa com base na pegada, mas não há provas suficientes.", final=True)
-    root.right.left.right = arvore.add("Você continua procurando e encontra uma testemunha.",
+    root.right.left.left = Node("Você pode acusar alguém base na pegada", final=True)
+    root.right.left.right = arvore.add("Seguir para a PARTE 2 DO JOGO ",
                                        "Você decide acusar alguém com base no depoimento da testemunha.",
                                        "Você continua procurando mais informações.")
 
-    root.right.right.left = Node("Você acusa o sócio com base no álibi, mas não há provas suficientes. Tente novamente.", final=True)
-    root.right.right.right = arvore.add("Você encontra um objeto pessoal do suspeito.",
+    root.right.right.left = Node("Você pode acusar alguém com base no álibi", final=True)
+    root.right.right.right = arvore.add("Seguir para a PARTE 2 DO JOGO ",
                                         "Você decide acusar alguém com base no objeto.",
                                         "Você continua procurando mais informações.")
 
@@ -151,3 +158,4 @@ def iniciar_jogo():
     arvore.traverse(arvore.root)
 
 iniciar_jogo()
+
