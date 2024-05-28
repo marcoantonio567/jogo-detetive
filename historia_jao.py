@@ -1,7 +1,6 @@
 from time import sleep
 from cores import colors
 from maquina import type_writer
-from historia_jao import jogar2
 class Node:
     def __init__(self, question=None, left=None, right=None, final=False):
         self.question = question
@@ -36,8 +35,8 @@ class BinaryTree:
             if choice == "1" and node.left:
                 if node.left.final:
                     print(node.left.question)
-                    if "resolve o caso" in node.left.question:
-                        print(colors.LIGHTCYAN+"Parabéns! Você resolveu o caso!"+colors.END)
+                    if "Você acusa Eloy Casapequena, por que sim" in node.left.question:
+                        print(colors.LIGHTCYAN+"Parabéns! Você resolveu o caso! Eloy estava manipulando o filho do lorde."+colors.END)
                     else:
                         print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início da fase...\n"+colors.END)
                         sleep(3)
@@ -48,9 +47,8 @@ class BinaryTree:
             elif choice == "2" and node.right:
                 if node.right.final:
                     print(node.right.question)
-                    if "Você decide continuar investigando" in node.right.question:
-                        print(colors.GREEN+"Você está sendo direcionado para a fase 4 do jogo" +colors.END)
-                        jogar2()
+                    if "Você decide continuar investigando." in node.right.question:
+                        print(colors.GREEN+"E você descobre que há falta de registros da sua presença no dia do crime." +colors.END)
                     else:
                         print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início da Fase...\n"+colors.END)
                         sleep(3)
@@ -64,11 +62,11 @@ class BinaryTree:
         else:
             print("Fim do jogo.")
 
-def iniciar_jogo():
+def jogar2():
     print("\n---------------------------------------------------------------------------------\n")
     sleep(0.2)
     #aqui começa o contexto inicial
-    mensagem =colors.GREEN+ "> VOCÊ CHEGOU AO NÍVEL 3! <\n"
+    mensagem =colors.GREEN+ "> VOCÊ CHEGOU AO NÍVEL 4! <\n"
     type_writer(mensagem)
     mensagem1 =colors.RED + "Obs: se errar a acusação, volta para o inicio do jogo. \n"
     type_writer(mensagem1)
@@ -76,49 +74,42 @@ def iniciar_jogo():
     mensagem11 =colors.RED + "-- O culpado é quem você menos espera -- \n"
     type_writer(mensagem11)
     sleep(0.2)
-    mensagem =colors.GREEN+ "\nDias após o início da investigação, Arthur Blake descobre duas novas peças no quebra-cabeça: \n"
-    type_writer(mensagem)
-    sleep(0.2)
-    mensagem2 = "Sarah Blackwood, uma filha ilegítima de Lorde Blackwood, e o Dr. Jonathan Parker, médico da família.\n"
+    mensagem2 =colors.GREEN + "\n Dias após os acontecimentos anteriores\n"
     type_writer(mensagem2)
     sleep(0.2)
-    mensagem22 = "E percebe que há mais membros bem próximos ao Lorde que também não tinham registros de presença\n"
-    type_writer(mensagem22)
-    sleep(0.2)
-    mensagem222 = "no momento do crime, descartando assim a exclusividade de suspeitas sobre Tyler e Alice.\n"
-    type_writer(mensagem222)
-    sleep(0.2)
-    mensagem3 = "Essas revelações lançam luz sobre possíveis motivos e conexões obscuras dentro da família. Sarah surge \n"
+    mensagem3 =colors.GREEN+ "após um melhor depoimento de Sarah Blackwood  \n"+ colors.END
     type_writer(mensagem3)
     sleep(0.2)
-    mensagem6 = "como uma figura enigmática, enquanto o acesso ilimitado de Dr. Parker à mansão o coloca sob \n"
+    mensagem4 =colors.GREEN+ "ela não demonstrava nenhum indício de ter feito o crime \n"+ colors.END
+    type_writer(mensagem4)
+    sleep(0.2)
+    mensagem5 =colors.GREEN+ "pois estava apaixonada pelo Dr. Jonathan Parker. \n"+ colors.END
+    type_writer(mensagem5)
+    sleep(0.2)
+    mensagem6 =colors.GREEN+ "o que também inocentava o Dr. Jonathan Parker, pois estava planejando se casar com a mesma\n"+ colors.END
     type_writer(mensagem6)
     sleep(0.2)
-    mensagem66 = "suspeita. Com o número de suspeitos aumentando, Arthur se vê imerso em um labirinto de intrigas familiares, \n"
-    type_writer(mensagem66)
+    mensagem6 =colors.GREEN+ "mas o Dr. Jonathan Parker revelou algo importante, um dos suspeitos estava mentindo \n"+ colors.END
+    type_writer(mensagem6)
     sleep(0.2)
-    mensagem67 = "onde cada nova descoberta revela mais sobre os segredos sombrios que cercam o assassinato de Lorde Blackwood.\n"+ colors.END
-    type_writer(mensagem67)
+    mensagem6 =colors.GREEN+ "Victor! mas não era apenas isso, havia mais alguem Eloy Casapequena.\n"+ colors.END
+    type_writer(mensagem6)
     sleep(0.2)
-
-    mensagem6 =colors.DARKRED+ "\nOs suspeitos até então são:\n"+ colors.END
+    mensagem6 =colors.DARKRED+ "\nOs suspeitos:\n"+ colors.END
     type_writer(mensagem6)
     sleep(0.2)
     #aqui termina o contexto inical
     #aqui começa a descrição dos suspeitos
-    print(colors.CYAN + "1. Lydia Raven: Prima distante com interesse no ocultismo e presença noturna frequente.")
+    print(colors.CYAN + "1. Eloy Casapequena: Um musico qualquer não parece ter muitas ambições.")
     sleep(0.2)
-    print("2. Tyler Thompson: Mordomo leal com conhecimento íntimo da rotina da vítima e possível motivo pessoal.")
+    print("2. Victor Blackwood: Filho com desavenças sobre os negócios da família e acesso à mansão.")
     sleep(0.2)
-    print("3. Sarah Blackwood: Filha ilegítima de Lorde Blackwood, infiltrada na mansão como governanta. ")
-    sleep(0.2)
-    print("4. Dr. Jonathan Parker: Médico da família e amigo íntimo de Lorde Blackwood. " + colors.END)
-    sleep(0.2)
+  
     #aqui termina a descrição dos suspeitos
     mensagem7 = colors.BLUE + "\nSua missão é coletar pistas, interrogar os suspeitos e resolver o caso.\n"
     type_writer(mensagem7)
     sleep(0.2)
-    mensagem8 = "Vamos lá!\n" + colors.END
+    mensagem8 = "Vamos começar!\n" + colors.END
     type_writer(mensagem8)
     sleep(0.2)
     print("\n---------------------------------------------------------------------------------\n")
@@ -127,37 +118,37 @@ def iniciar_jogo():
 
     root = arvore.add(colors.YELLOW + "Você está no local do crime. O que você faz?" + colors.END,
                       colors.GREEN + "Você decide acusar alguém." + colors.END,
-                      colors.GREEN + "Você decide analisar melhor os novos suspeitos." + colors.END)
+                      colors.GREEN + "Você decide analisar melhor a reação dos novos suspeitos." + colors.END)
 
-    root.left.left = Node(colors.BLUE+ "Você acusa Sarah Blackwood, a filha ilegítima."+colors.END, final=True)
-    root.left.right = Node(colors.BLUE+"Dr. Jonathan Parker, o médico da família."+colors.END, final=True)
+    root.left.left = Node(colors.BLUE+ "Você acusa o filho, Victor Blackwood."+colors.END, final=True)
+    root.left.right = Node(colors.BLUE+"Você acusa o musico, Eloy Casapequena."+colors.END, final=True)
 
-    root.right.left = arvore.add("Sarah Blackwood, sofre severamente por sua rejeição como filha.",
-                                 "Você decide acusar alguém com base na pegada.",
+    root.right.left = arvore.add("Victor Blackwood, demonstrava medo.",
+                                 "Você o questiona.",
                                  "Você continua procurando mais informações.")
 
-    root.right.right = arvore.add("Dr. Jonathan Parker, foi citado no testamento do Lorde.",
-                                  "Você decide acusar alguém baseado no álibi.",
+    root.right.right = arvore.add("Eloy, parecia bem calmo afinal era apenas um musico qualquer.",
+                                  "Você decide perguntar mais sobre a musica.",
                                   "Você continua procurando mais informações.")
 
-    root.right.left.left = Node("Você decide acusar Sarah Blackwood, a filha ilegítima.", final=True)
-    root.right.left.right = arvore.add("Você questioná-la sobre sua história.",
+    root.right.left.left = Node("Você decide acusar o Victor Blackwood", final=True)
+    root.right.left.right = arvore.add("Você questioná-la sobre sua reação.",
                                        "Você decide acusar alguém com base no depoimento da testemunha.",
                                        "Você continua procurando mais informações.")
 
-    root.right.right.left = Node("Você acusa o Dr. Jonathan Parker, o médico da família.", final=True)
-    root.right.right.right = arvore.add("Você questiona o médico sobre estar no testamento da vítima.",
+    root.right.right.left = Node("Você acusa o musico, Eloy Casapequena", final=True)
+    root.right.right.right = arvore.add("Você endaga o musico sobre sua relação com victor.",
                                         "Você decide acusar alguém com base no objeto.",
                                         "Você continua procurando mais informações.")
 
-    root.right.left.right.left = Node("Você acusa Sarah Blackwood, por ter enfatizado sede de vingança.", final=True)
-    root.right.left.right.right = Node("Você decide continuar investigando", final=True)
+    root.right.left.right.left = Node("Você acusa Victor Blackwood, por demonstrar tanto medo.", final=True)
+    root.right.left.right.right = Node("Com certeza é o Victor", final=True)
 
-    root.right.right.right.left = Node("Você acusa o Dr. Jonathan Parker por contradição na explicação.", final=True)
-    root.right.right.right.right = Node("Você decide continuar investigando", final=True)
+    root.right.right.right.left = Node("Você acusa Eloy Casapequena, por que sim", final=True)
+    root.right.right.right.right = Node("volte ao inicio", final=True)
 
     arvore.root = root
 
     arvore.traverse(arvore.root)
 
-#iniciar_jogo()
+jogar2()

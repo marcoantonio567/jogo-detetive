@@ -5,7 +5,7 @@ from animacoes import ascii_typing_animation , figlet_animation , barra , barra2
 from historia_marco import iniciar_jogo
 from historia_julia import iniciar
 from historia_eville import jogo
-
+from historia_jao import jogar2
 def mostrar_menu():
     time.sleep(0.2)
     wellcome = "Bem vindo ao Jogo !"
@@ -95,7 +95,7 @@ def Fases():
                     if escolha ==4:
                         print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
                         barra()
-                        break
+                        jogar2()
                     if escolha == 5:
                         print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
                         barra()
