@@ -2,14 +2,14 @@ from time import sleep
 from cores import colors
 from maquina import type_writer
 class Node:
-    def _init_(self, question=None, left=None, right=None, final=False):
+    def __init__(self, question=None, left=None, right=None, final=False):
         self.question = question
         self.left = left
         self.right = right
         self.final = final
 
 class BinaryTree:
-    def _init_(self, root=None):
+    def __init__(self, root=None):
         self.root = root
 
     def add(self, question, left_question=None, right_question=None, final_left=False, final_right=False):
@@ -47,8 +47,8 @@ class BinaryTree:
             elif choice == "2" and node.right:
                 if node.right.final:
                     print(node.right.question)
-                    if "Você decide continuar investigando." in node.right.question:
-                        print(colors.GREEN+"E descobre que na verdade sempre houve esforço e proteção da sua parte em relação ao Lorde" +colors.END)
+                    if "Você decide continuar investigando" in node.right.question:
+                        print(colors.GREEN+"Você está sendo direcionado para a fase 4 do jogo" +colors.END)
                     else:
                         print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início da Fase...\n"+colors.END)
                         sleep(3)
@@ -149,10 +149,10 @@ def iniciar_jogo():
                                         "Você continua procurando mais informações.")
 
     root.right.left.right.left = Node("Você acusa Sarah Blackwood, por ter enfatizado sede de vingança.", final=True)
-    root.right.left.right.right = Node("Você decide continuar investigando.", final=True)
+    root.right.left.right.right = Node("Você decide continuar investigando", final=True)
 
     root.right.right.right.left = Node("Você acusa o Dr. Jonathan Parker por contradição na explicação.", final=True)
-    root.right.right.right.right = Node("Você decide continuar investigando.", final=True)
+    root.right.right.right.right = Node("Você decide continuar investigando", final=True)
 
     arvore.root = root
 

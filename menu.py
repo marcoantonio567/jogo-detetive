@@ -3,6 +3,8 @@ from maquina import type_writer
 import time
 from animacoes import ascii_typing_animation , figlet_animation , barra , barra2
 from historia_marco import iniciar_jogo
+from historia_julia import iniciar
+from historia_eville import jogo
 
 def mostrar_menu():
     time.sleep(0.2)
@@ -29,7 +31,7 @@ def Jogar():
     figlet_animation("Iniciando Jogo")
     print("\n" + "=" * 40)
     barra()
-    iniciar_jogo()
+    iniciar()
 def Creditos():
     figlet_animation("CREDITOS")
     print("\n" + "=" * 40)
@@ -81,15 +83,15 @@ def Fases():
                     if escolha ==1:
                         print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
                         barra()
-                        break
+                        iniciar()
                     if escolha ==2:
                         print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
                         barra()
-                        break
+                        jogo()
                     if escolha ==3:
                         print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
                         barra()
-                        break
+                        iniciar_jogo()
                     if escolha ==4:
                         print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
                         barra()

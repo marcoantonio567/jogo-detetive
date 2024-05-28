@@ -1,6 +1,7 @@
 from time import sleep
 from cores import colors
 from maquina import type_writer
+from historia_marco import iniciar_jogo
 class Node:
     def __init__(self, question=None, left=None, right=None, final=False):
         self.question = question
@@ -49,6 +50,7 @@ class BinaryTree:
                     print(node.right.question)
                     if "Você decide continuar investigando." in node.right.question:
                         print(colors.GREEN+"E você descobre que há falta de registros da sua presença no dia do crime." +colors.END)
+                        iniciar_jogo()
                     else:
                         print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início da Fase...\n"+colors.END)
                         sleep(3)

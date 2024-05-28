@@ -1,6 +1,7 @@
 from time import sleep
 from cores import colors
 from maquina import type_writer
+from historia_eville import jogo
 class Node:
     def __init__(self, question=None, left=None, right=None, final=False):
         self.question = question
@@ -49,6 +50,7 @@ class BinaryTree:
                     print(node.right.question)
                     if "Seguir para a PARTE 2" in node.right.question:
                         print(colors.GREEN+"Você está sendo direcionado para a fase 2 do jogo" +colors.END)
+                        jogo()
                     else:
                         print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início da Fase...\n"+colors.END)
                         sleep(3)
