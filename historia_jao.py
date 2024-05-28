@@ -151,4 +151,4 @@ def jogar2():
 
     arvore.traverse(arvore.root)
 
-jogar2()
+#jogar2()
