@@ -38,7 +38,7 @@ class BinaryTree:
                     if "resolve o caso" in node.left.question:
                         print(colors.LIGHTCYAN+"Parabéns! Você resolveu o caso!"+colors.END)
                     else:
-                        print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início do jogo...\n"+colors.END)
+                        print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início da Fase...\n"+colors.END)
                         sleep(3)
                         print("\n---------------------------------------------------------------------------------\n")
                         self.traverse(self.root)
@@ -50,7 +50,7 @@ class BinaryTree:
                     if "resolve o caso" in node.right.question:
                         print("Parabéns! Você resolveu o caso!")
                     else:
-                        print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início do jogo...\n"+colors.END)
+                        print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início da Fase...\n"+colors.END)
                         sleep(3)
                         print("\n---------------------------------------------------------------------------------\n")
                         self.traverse(self.root)
@@ -65,7 +65,6 @@ class BinaryTree:
 def iniciar_jogo():
     print("\n---------------------------------------------------------------------------------\n")
     sleep(0.2)
-    #aqui começa o contexto inicial
     mensagem =colors.GREEN+ "BEM-VINDO AO JOGO DE DETETIVE!\n"
     type_writer(mensagem)
     mensagem1 =colors.RED + "Obs: se errar a acusação, volta para o inicio do jogo. \n"
@@ -92,29 +91,24 @@ def iniciar_jogo():
     mensagem6 =colors.GREEN + "de tensão.Lá está a mansão Blackwood, com sua arquitetura gótica e sombria, que é o cenário perfeito\n"+ colors.END
     type_writer(mensagem6)
     sleep(0.2)
-    mensagem6 =colors.DARKRED+ "para um mistério de assassinato. Os habitantes da vila, embora desconfiados de estranhos,\n"+ colors.END
+    mensagem6 =colors.GREEN+ "para um mistério de assassinato. Os habitantes da vila, embora desconfiados de estranhos,\n"+ colors.END
     type_writer(mensagem6)
     sleep(0.2)
-    mensagem6 =colors.DARKRED+ "esperam ansiosamente que você resolva o caso e traga paz à sua comunidade.\n"+ colors.END
+    mensagem6 =colors.GREEN+ "esperam ansiosamente que você resolva o caso e traga paz à sua comunidade.\n"+ colors.END
     type_writer(mensagem6)
     sleep(0.2)
     mensagem6 =colors.DARKRED+ "\n Os possíveis suspeitos são:\n"+ colors.END
     type_writer(mensagem6)
     sleep(0.2)
 
-
-    
     #aqui termina o contexto inical
     #aqui começa a descrição dos suspeitos
     print(colors.CYAN + "1. Alice Blackwood: Viúva com acesso à mansão e possíveis conflitos conjugais e financeiros.")
     sleep(0.2)
-    print("2. Victor Blackwood: Filho com desavenças sobre os negócios da família e acesso à mansão." + colors.END)
+    print("2. Victor Blackwood: Filho com desavenças sobre os negócios da família e acesso à mansão.")
     sleep(0.2)
-    #aqui termina a descrição dos suspeitos
-    mensagem7 = colors.BLUE + "\nSua missão é coletar pistas, interrogar os suspeitos e resolver o caso.\n"
-    type_writer(mensagem7)
-    sleep(0.2)
-    mensagem8 = "Vamos começar!\n" + colors.END
+    
+    mensagem8 = "Está preparado? Vamos começar!\n" + colors.END
     type_writer(mensagem8)
     sleep(0.2)
     print("\n---------------------------------------------------------------------------------\n")
@@ -123,21 +117,21 @@ def iniciar_jogo():
 
     root = arvore.add(colors.YELLOW + "Você está no local do crime. O que você faz?" + colors.END,
                       colors.GREEN + "Você decide acusar alguém." + colors.END,
-                      colors.GREEN + "Você decide procurar mais informações." + colors.END)
+                      colors.GREEN + "Você decide obter mais informações" + colors.END)
 
-    root.left.left = Node(colors.BLUE+ "Você acusa a viúva,  Alice Blackwood."+colors.END, final=True)
-    root.left.right = Node(colors.BLUE+"Você acusa o filho, Victor Blackwood"+colors.END, final=True)
+    root.left.left = Node(colors.BLUE+ "Você acusa a esposa, Alice "+colors.END, final=True)
+    root.left.right = Node(colors.BLUE+"Você acusa o filho, Victor "+colors.END, final=True)
 
-    root.right.left = arvore.add("Você encontra uma pista importante: uma pegada de sapato.",
+    root.right.left = arvore.add("Você encontra uma pegada de sapato e decide seguir ela",
                                  "Você decide acusar alguém com base na pegada.",
                                  "Você continua procurando mais informações.")
 
-    root.right.right = arvore.add("Você encontra um álibi que descarta um dos suspeitos.",
+    root.right.right = arvore.add("Você encontra um álibi que descarta um dos suspeitos. Seguir esta pista:",
                                   "Você decide acusar alguém baseado no álibi.",
                                   "Você continua procurando mais informações.")
 
-    root.right.left.left = Node("Você pode  acusa a esposa com base na pegada, mas não há provas suficientes.", final=True)
-    root.right.left.right = arvore.add("Você continua procurando e encontra uma testemunha.",
+    root.right.left.left = Node("Você decide acusar Lydia Raven, a prima distante", final=True)
+    root.right.left.right = arvore.add("Você continua procurando mais informações sobre sua reação.",
                                        "Você decide acusar alguém com base no depoimento da testemunha.",
                                        "Você continua procurando mais informações.")
 
@@ -146,8 +140,8 @@ def iniciar_jogo():
                                         "Você decide acusar alguém com base no objeto.",
                                         "Você continua procurando mais informações.")
 
-    root.right.left.right.left = Node("Você acusa a esposa com base no depoimento, mas não há provas suficientes. Tente novamente.", final=True)
-    root.right.left.right.right = Node("Você encontra a arma do crime com impressões digitais do jardineiro, inocentando os outros. Você resolve o caso!", final=True)
+    root.right.left.right.left = Node("Você acusa Lydia Raven com bases nas informações que você possui.", final=True)
+    root.right.left.right.right = Node("Você continua a investigar profundamente esse caso.", final=True)
 
     root.right.right.right.left = Node("Você acusa o sócio com base no objeto, mas não há provas suficientes. Tente novamente.", final=True)
     root.right.right.right.right = Node("Você encontra um novo suspeito com um motivo forte, inocentando os outros. Você resolve o caso!", final=True)
