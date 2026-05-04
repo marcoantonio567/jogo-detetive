@@ -1,12 +1,30 @@
-import pyfiglet
 import time
-from asciimatics import *
-from alive_progress import alive_bar
-from rich.console import Console
-from rich.progress import track
+
+try:
+    import pyfiglet
+except Exception:
+    pyfiglet = None
+
+try:
+    from alive_progress import alive_bar
+except Exception:
+    alive_bar = None
+
+try:
+    from rich.console import Console
+    from rich.progress import track
+except Exception:
+    Console = None
+    track = None
+
+
+def _render_figlet(text, font):
+    if pyfiglet is None:
+        return text
+    return pyfiglet.figlet_format(text, font=font)
 
 def ascii_typing_animation(text, font='slant', delay=0.005):
-    ascii_art = pyfiglet.figlet_format(text, font=font)
+    ascii_art = _render_figlet(text, font)
     for char in ascii_art:
         print(char, end='', flush=True)
         time.sleep(delay)
@@ -15,19 +33,29 @@ def ascii_typing_animation(text, font='slant', delay=0.005):
 
 # Função para animação com pyfiglet
 def figlet_animation(text, font='slant'):
-    ascii_art = pyfiglet.figlet_format(text, font=font)
+    ascii_art = _render_figlet(text, font)
     print(ascii_art)
 
 
 def barra():
+    if alive_bar is None:
+        for _ in range(100):
+            time.sleep(0.01)
+        return
+
     with alive_bar(100) as bar:
-        for i in range(100):
+        for _ in range(100):
             time.sleep(0.01)
             bar()
 
 
 def barra2():
-    console = Console()
-    for task in track(range(100), description="Carregado..."):
+    if Console is None or track is None:
+        for _ in range(100):
+            time.sleep(0.01)
+        return
+
+    Console()
+    for _ in track(range(100), description="Carregado..."):
         time.sleep(0.01)
 

@@ -12,7 +12,7 @@ def mostrar_menu():
     ascii_typing_animation(wellcome)
 
     time.sleep(0.2)
-    opcao1 = colors.ORANGE+"1. Jogar\n"+colors.END
+    opcao1 = colors.ORANGE+"\n1. Jogar\n"+colors.END
     opcao2 = colors.PURPLE+"2. Créditos\n"+colors.END
     opcao3 = colors.GREEN+"3. Fases\n"+colors.END
     opcao4 = colors.RED+"4. Sair\n"+colors.END
