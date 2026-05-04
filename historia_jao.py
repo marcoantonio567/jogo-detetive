@@ -62,7 +62,7 @@ class BinaryTree:
         else:
             print("Fim do jogo.")
 
-def jogar2():
+def start_part4():
     print("\n---------------------------------------------------------------------------------\n")
     sleep(0.2)
     #aqui começa o contexto inicial

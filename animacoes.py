@@ -1,5 +1,4 @@
 import time
-
 try:
     import pyfiglet
 except Exception:
@@ -19,9 +18,14 @@ except Exception:
 
 
 def _render_figlet(text, font):
+    # Render the text using pyfiglet
     if pyfiglet is None:
         return text
     return pyfiglet.figlet_format(text, font=font)
+
+def figlet_animation(text, font='slant'):
+    ascii_art = _render_figlet(text, font)
+    print(ascii_art)
 
 def ascii_typing_animation(text, font='slant', delay=0.005):
     ascii_art = _render_figlet(text, font)
@@ -29,15 +33,7 @@ def ascii_typing_animation(text, font='slant', delay=0.005):
         print(char, end='', flush=True)
         time.sleep(delay)
 
-#ascii_typing_animation("Hello World")
-
-# Função para animação com pyfiglet
-def figlet_animation(text, font='slant'):
-    ascii_art = _render_figlet(text, font)
-    print(ascii_art)
-
-
-def barra():
+def bar_animation():
     if alive_bar is None:
         for _ in range(100):
             time.sleep(0.01)
@@ -48,8 +44,7 @@ def barra():
             time.sleep(0.01)
             bar()
 
-
-def barra2():
+def bar_animation2():
     if Console is None or track is None:
         for _ in range(100):
             time.sleep(0.01)

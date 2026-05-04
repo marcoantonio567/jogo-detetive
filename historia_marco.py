@@ -1,7 +1,7 @@
 from time import sleep
 from cores import colors
 from maquina import type_writer
-from historia_jao import jogar2
+from historia_jao import start_part4
 class Node:
     def __init__(self, question=None, left=None, right=None, final=False):
         self.question = question
@@ -50,7 +50,7 @@ class BinaryTree:
                     print(node.right.question)
                     if "Você decide continuar investigando" in node.right.question:
                         print(colors.GREEN+"Você está sendo direcionado para a fase 4 do jogo" +colors.END)
-                        jogar2()
+                        start_part4()
                     else:
                         print(colors.LIGHTRED+"Não há provas suficientes. Voltando ao início da Fase...\n"+colors.END)
                         sleep(3)
@@ -64,7 +64,7 @@ class BinaryTree:
         else:
             print("Fim do jogo.")
 
-def iniciar_jogo():
+def start_part3():
     print("\n---------------------------------------------------------------------------------\n")
     sleep(0.2)
     #aqui começa o contexto inicial

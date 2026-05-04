@@ -1,42 +1,40 @@
 from cores import colors
 from maquina import type_writer
 import time
-from animacoes import ascii_typing_animation , figlet_animation , barra , barra2
-from historia_marco import iniciar_jogo
-from historia_julia import iniciar
-from historia_eville import jogo
-from historia_jao import jogar2
-def mostrar_menu():
+from animacoes import ascii_typing_animation , figlet_animation , bar_animation , bar_animation2
+from historia_marco import start_part3
+from historia_julia import start_part1
+from historia_eville import start_part2
+from historia_jao import start_part4
+
+def show_menu():
     time.sleep(0.2)
-    wellcome = "Bem vindo ao Jogo !"
-    ascii_typing_animation(wellcome)
+    welcome = "Bem vindo ao Jogo !"
+    ascii_typing_animation(welcome)
 
     time.sleep(0.2)
-    opcao1 = colors.ORANGE+"\n1. Jogar\n"+colors.END
-    opcao2 = colors.PURPLE+"2. Créditos\n"+colors.END
-    opcao3 = colors.GREEN+"3. Fases\n"+colors.END
-    opcao4 = colors.RED+"4. Sair\n"+colors.END
-    #time.sleep(0.2)
-    type_writer(opcao1)
-    #time.sleep(0.2)
-    type_writer(opcao2)
-    #time.sleep(0.2)
-    type_writer(opcao3)
-    #time.sleep(0.2)
-    type_writer(opcao4)
-    #time.sleep(0.2)
+    option1 = colors.ORANGE+"\n1. Jogar\n"+colors.END
+    option2 = colors.PURPLE+"2. Créditos\n"+colors.END
+    option3 = colors.GREEN+"3. Fases\n"+colors.END
+    option4 = colors.RED+"4. Sair\n"+colors.END
+    
+    type_writer(option1)
+    type_writer(option2)
+    type_writer(option3)
+    type_writer(option4)
+    
     print(colors.MAGENTA+"=" * 40+colors.END)
 
 def Jogar():
     figlet_animation("Iniciando Jogo")
     print("\n" + "=" * 40)
-    barra()
-    iniciar()
+    bar_animation()
+    start_part1()
 def Creditos():
     figlet_animation("CREDITOS")
     print("\n" + "=" * 40)
     print("Carregando créditos...")
-    barra()
+    bar_animation()
     
     print("=" * 40 + "\n")
     time.sleep(2)
@@ -57,7 +55,7 @@ def Fases():
     print("\n" + "=" * 40)
     print("Abrindo Fases...")
     print("=" * 40 )
-    barra2()
+    bar_animation2()
     def historias():
         while True:
             msg = colors.CYAN + "Escolha a história que você deseja iniciar: " + colors.END
@@ -82,23 +80,23 @@ def Fases():
                 if 1 <= escolha <= 5:
                     if escolha ==1:
                         print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
-                        barra()
-                        iniciar()
+                        bar_animation()
+                        start_part1()
                     if escolha ==2:
                         print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
-                        barra()
-                        jogo()
+                        bar_animation()
+                        start_part2()
                     if escolha ==3:
                         print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
-                        barra()
-                        iniciar_jogo()
+                        bar_animation()
+                        start_part3()
                     if escolha ==4:
                         print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
-                        barra()
-                        jogar2()
+                        bar_animation()
+                        start_part4()
                     if escolha == 5:
                         print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
-                        barra()
+                        bar_animation()
                         main()
                     # else:
                     #     print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
@@ -115,7 +113,7 @@ def Fases():
 
 def main():
     while True:
-        mostrar_menu()
+        show_menu()
         time.sleep(0.2)
         escolha = input(colors.DARKBLUE+"Escolha uma opção (1-4): "+colors.END)
 
