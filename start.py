@@ -25,21 +25,22 @@ def show_menu():
     
     print(colors.MAGENTA+"=" * 40+colors.END)
 
-def Jogar():
+def play():
     figlet_animation("Iniciando Jogo")
     print("\n" + "=" * 40)
     bar_animation()
     start_part1()
-def Creditos():
+
+
+def Credits():
     figlet_animation("CREDITOS")
     print("\n" + "=" * 40)
     print("Carregando créditos...")
     bar_animation()
-    
     print("=" * 40 + "\n")
     time.sleep(2)
-    mensagem = colors.CYAN+"Este jogo foi desenvolvido por :"+colors.END
-    type_writer(mensagem)
+    mesage = colors.CYAN+"Este jogo foi desenvolvido por :"+colors.END
+    type_writer(mesage)
     time.sleep(1)
     print(colors.random_color()+"\nMarco"+colors.END)
     time.sleep(0.2)
@@ -50,13 +51,13 @@ def Creditos():
     print(colors.random_color()+"Julia"+colors.END)
     time.sleep(1)
 
-def Fases():
+def phases():
     figlet_animation("Fases")
     print("\n" + "=" * 40)
     print("Abrindo Fases...")
     print("=" * 40 )
     bar_animation2()
-    def historias():
+    def stories():
         while True:
             msg = colors.CYAN + "Escolha a história que você deseja iniciar: " + colors.END
             type_writer(msg)
@@ -73,33 +74,31 @@ def Fases():
             time.sleep(1)
             print(colors.DARKBLUE + "Escolha uma opção (1-5): " + colors.END)
 
-            escolha = input()
+            choices = input()
 
-            if escolha.isdigit():
-                escolha = int(escolha)
-                if 1 <= escolha <= 5:
-                    if escolha ==1:
-                        print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
+            if choices.isdigit():
+                choices = int(choices)
+                if 1 <= choices <= 5:
+                    if choices ==1:
+                        print(colors.CYAN + f"Você escolheu a opção {choices}!" + colors.END)
                         bar_animation()
                         start_part1()
-                    if escolha ==2:
-                        print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
+                    if choices ==2:
+                        print(colors.CYAN + f"Você escolheu a opção {choices}!" + colors.END)
                         bar_animation()
                         start_part2()
-                    if escolha ==3:
-                        print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
+                    if choices ==3:
+                        print(colors.CYAN + f"Você escolheu a opção {choices}!" + colors.END)
                         bar_animation()
                         start_part3()
-                    if escolha ==4:
-                        print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
+                    if choices ==4:
+                        print(colors.CYAN + f"Você escolheu a opção {choices}!" + colors.END)
                         bar_animation()
                         start_part4()
-                    if escolha == 5:
-                        print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
+                    if choices == 5:
+                        print(colors.CYAN + f"Você escolheu a opção {choices}!" + colors.END)
                         bar_animation()
                         main()
-                    # else:
-                    #     print(colors.CYAN + f"Você escolheu a opção {escolha}!" + colors.END)
                 else:
                     print(colors.CYAN + "Escolha inválida! Por favor, escolha um número entre 1 e 5." + colors.END)
             else:
@@ -108,24 +107,24 @@ def Fases():
             time.sleep(1)
         
         
-    historias()
+    stories()
         
 
 def main():
     while True:
         show_menu()
         time.sleep(0.2)
-        escolha = input(colors.DARKBLUE+"Escolha uma opção (1-4): "+colors.END)
+        choices = input(colors.DARKBLUE+"Escolha uma opção (1-4): "+colors.END)
 
-        if escolha == '1':
-            Jogar()
+        if choices == '1':
+            play()
             break
-        elif escolha == '2':
-            Creditos()
-        elif escolha == '3':
-            Fases()
+        elif choices == '2':
+            Credits()
+        elif choices == '3':
+            phases()
             break
-        elif escolha == '4':
+        elif choices == '4':
             print("\n" + "=" * 40)
             print("Saindo do jogo...")
             print("=" * 40)
