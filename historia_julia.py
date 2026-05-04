@@ -67,40 +67,40 @@ class BinaryTree:
 def start_part1():
     print("\n---------------------------------------------------------------------------------\n")
     sleep(0.2)
-    mensagem =colors.GREEN+ "BEM-VINDO AO JOGO DE DETETIVE!\n"
-    type_writer(mensagem)
-    mensagem1 =colors.RED + "Obs: se errar a acusação, volta para o inicio do jogo. \n"
-    type_writer(mensagem1)
+    mensage =colors.GREEN+ "BEM-VINDO AO JOGO DE DETETIVE!\n"
+    type_writer(mensage)
+    mensage =colors.RED + "Obs: se errar a acusação, volta para o inicio do jogo. \n"
+    type_writer(mensage)
     sleep(0.2)
-    mensagem2 =colors.GREEN + "\nEm uma pequena e sombria vila chamada Ravenwood, conhecida por suas florestas densas e neblina constante, \n"
-    type_writer(mensagem2)
+    mensage =colors.GREEN + "\nEm uma pequena e sombria vila chamada Ravenwood, conhecida por suas florestas densas e neblina constante, \n"
+    type_writer(mensage)
     sleep(0.2)
-    mensagem3 =colors.GREEN+ "você, Arthur Blake, um famoso detetive, reside. Natural de uma cidade vizinha, você foi chamado para\n"+ colors.END
-    type_writer(mensagem3)
+    mensage =colors.GREEN+ "você, Arthur Blake, um famoso detetive, reside. Natural de uma cidade vizinha, você foi chamado para\n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
-    mensagem4 =colors.GREEN+ "resolver um caso perturbador que abalou os moradores locais. O corpo de Lorde Henry Blackwood, \n"+ colors.END
-    type_writer(mensagem4)
+    mensage =colors.GREEN+ "resolver um caso perturbador que abalou os moradores locais. O corpo de Lorde Henry Blackwood, \n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
-    mensagem5 =colors.GREEN+ "o patriarca de uma das famílias mais influentes da vila, foi encontrado em sua mansão isolada,\n"+ colors.END
-    type_writer(mensagem5)
+    mensage =colors.GREEN+ "o patriarca de uma das famílias mais influentes da vila, foi encontrado em sua mansão isolada,\n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
-    mensagem6 =colors.GREEN+ "e as circunstâncias em torno de sua morte são misteriosas. Ao chegar em Ravenwood em uma\n"+ colors.END
-    type_writer(mensagem6)
+    mensage =colors.GREEN+ "e as circunstâncias em torno de sua morte são misteriosas. Ao chegar em Ravenwood em uma\n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
-    mensagem6 =colors.GREEN + "uma noite chuvosa, você é recebido pelo som inquietante das árvores ao vento, onde a atmosfera é carregada\n"+ colors.END
-    type_writer(mensagem6)
+    mensage =colors.GREEN + "uma noite chuvosa, você é recebido pelo som inquietante das árvores ao vento, onde a atmosfera é carregada\n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
-    mensagem6 =colors.GREEN + "de tensão.Lá está a mansão Blackwood, com sua arquitetura gótica e sombria, que é o cenário perfeito\n"+ colors.END
-    type_writer(mensagem6)
+    mensage =colors.GREEN + "de tensão.Lá está a mansão Blackwood, com sua arquitetura gótica e sombria, que é o cenário perfeito\n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
-    mensagem6 =colors.GREEN+ "para um mistério de assassinato. Os habitantes da vila, embora desconfiados de estranhos,\n"+ colors.END
-    type_writer(mensagem6)
+    mensage =colors.GREEN+ "para um mistério de assassinato. Os habitantes da vila, embora desconfiados de estranhos,\n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
-    mensagem6 =colors.GREEN+ "esperam ansiosamente que você resolva o caso e traga paz à sua comunidade.\n"+ colors.END
-    type_writer(mensagem6)
+    mensage =colors.GREEN+ "esperam ansiosamente que você resolva o caso e traga paz à sua comunidade.\n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
-    mensagem6 =colors.DARKRED+ "\n Os possíveis suspeitos são:\n"+ colors.END
-    type_writer(mensagem6)
+    mensage =colors.DARKRED+ "\n Os possíveis suspeitos são:\n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
 
     #aqui termina o contexto inical
@@ -110,8 +110,8 @@ def start_part1():
     print("2. Victor Blackwood: Filho com desavenças sobre os negócios da família e acesso à mansão.")
     sleep(0.2)
     
-    mensagem8 = "Está preparado? Vamos começar!\n" + colors.END
-    type_writer(mensagem8)
+    mensage = "Está preparado? Vamos começar!\n" + colors.END
+    type_writer(mensage)
     sleep(0.2)
     print("\n---------------------------------------------------------------------------------\n")
 

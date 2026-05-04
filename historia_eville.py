@@ -68,37 +68,37 @@ def start_part2():
     print("\n---------------------------------------------------------------------------------\n")
     sleep(0.2)
     #aqui começa o contexto inicial
-    mensagem =colors.GREEN+ "> VOCÊ CHEGOU AO NÍVEL 2! <\n"
-    type_writer(mensagem)
-    mensagem1 =colors.RED + "Obs: se errar a acusação, volta para o inicio do jogo. \n"
-    type_writer(mensagem1)
+    mensage =colors.GREEN+ "> VOCÊ CHEGOU AO NÍVEL 2! <\n"
+    type_writer(mensage)
+    mensage =colors.RED + "Obs: se errar a acusação, volta para o inicio do jogo. \n"
+    type_writer(mensage)
     sleep(0.2)
-    mensagem11 =colors.RED + "-- O culpado é quem você menos espera -- \n"
-    type_writer(mensagem11)
+    mensage =colors.RED + "-- O culpado é quem você menos espera -- \n"
+    type_writer(mensage)
     sleep(0.2)
-    mensagem2 =colors.GREEN + "\nArthur Blake, o detetive, achou uma adaga bonita no escritório de Lorde Blackwood. Ele mostrou \n"
-    type_writer(mensagem2)
+    mensage =colors.GREEN + "\nArthur Blake, o detetive, achou uma adaga bonita no escritório de Lorde Blackwood. Ele mostrou \n"
+    type_writer(mensage)
     sleep(0.2)
-    mensagem3 =colors.GREEN+ "aos suspeitos na biblioteca. Alice ficou intrigada, Victor assustado, Lydia não demonstrou  \n"+ colors.END
-    type_writer(mensagem3)
+    mensage =colors.GREEN+ "aos suspeitos na biblioteca. Alice ficou intrigada, Victor assustado, Lydia não demonstrou  \n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
-    mensagem4 =colors.GREEN+ "nada e Tyler pareceu indiferente. \n"+ colors.END
-    type_writer(mensagem4)
+    mensage =colors.GREEN+ "nada e Tyler pareceu indiferente. \n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
-    mensagem5 =colors.GREEN+ "Mas uma informação importante chega aos ouvidos do detetive e começa a mudar um pouco a sua atenção. \n"+ colors.END
-    type_writer(mensagem5)
+    mensage =colors.GREEN+ "Mas uma informação importante chega aos ouvidos do detetive e começa a mudar um pouco a sua atenção. \n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
-    mensagem6 =colors.GREEN+ "Alice Blackwood e Victor Blackwood foram confirmados com álibis sólidos que os excluem como  \n"+ colors.END
-    type_writer(mensagem6)
+    mensage =colors.GREEN+ "Alice Blackwood e Victor Blackwood foram confirmados com álibis sólidos que os excluem como  \n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
-    mensagem6 =colors.GREEN+ "suspeitos do assassinato de Lorde Blackwood. Há registros de que comprovam que estavam em locais \n"+ colors.END
-    type_writer(mensagem6)
+    mensage =colors.GREEN+ "suspeitos do assassinato de Lorde Blackwood. Há registros de que comprovam que estavam em locais \n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
-    mensagem6 =colors.GREEN+ "diferentes no momento do crime.\n"+ colors.END
-    type_writer(mensagem6)
+    mensage =colors.GREEN+ "diferentes no momento do crime.\n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
-    mensagem6 =colors.DARKRED+ "\nOs suspeitos:\n"+ colors.END
-    type_writer(mensagem6)
+    mensage =colors.DARKRED+ "\nOs suspeitos:\n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
     #aqui termina o contexto inical
     #aqui começa a descrição dos suspeitos
@@ -111,11 +111,11 @@ def start_part2():
     print("4. Tyler Thompson: Mordomo leal com conhecimento íntimo da rotina da vítima e possível motivo pessoal" + colors.END)
     sleep(0.2)
     #aqui termina a descrição dos suspeitos
-    mensagem7 = colors.BLUE + "\nSua missão é coletar pistas, interrogar os suspeitos e resolver o caso.\n"
-    type_writer(mensagem7)
+    mensage = colors.BLUE + "\nSua missão é coletar pistas, interrogar os suspeitos e resolver o caso.\n"
+    type_writer(mensage)
     sleep(0.2)
-    mensagem8 = "Vamos começar!\n" + colors.END
-    type_writer(mensagem8)
+    mensage = "Vamos começar!\n" + colors.END
+    type_writer(mensage)
     sleep(0.2)
     print("\n---------------------------------------------------------------------------------\n")
 

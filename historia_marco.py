@@ -68,41 +68,41 @@ def start_part3():
     print("\n---------------------------------------------------------------------------------\n")
     sleep(0.2)
     #aqui começa o contexto inicial
-    mensagem =colors.GREEN+ "> VOCÊ CHEGOU AO NÍVEL 3! <\n"
-    type_writer(mensagem)
-    mensagem1 =colors.RED + "Obs: se errar a acusação, volta para o inicio do jogo. \n"
-    type_writer(mensagem1)
+    mensage =colors.GREEN+ "> VOCÊ CHEGOU AO NÍVEL 3! <\n"
+    type_writer(mensage)
+    mensage =colors.RED + "Obs: se errar a acusação, volta para o inicio do jogo. \n"
+    type_writer(mensage)
     sleep(0.2)
-    mensagem11 =colors.RED + "-- O culpado é quem você menos espera -- \n"
-    type_writer(mensagem11)
+    mensage =colors.RED + "-- O culpado é quem você menos espera -- \n"
+    type_writer(mensage)
     sleep(0.2)
-    mensagem =colors.GREEN+ "\nDias após o início da investigação, Arthur Blake descobre duas novas peças no quebra-cabeça: \n"
-    type_writer(mensagem)
+    mensage =colors.GREEN+ "\nDias após o início da investigação, Arthur Blake descobre duas novas peças no quebra-cabeça: \n"
+    type_writer(mensage)
     sleep(0.2)
-    mensagem2 = "Sarah Blackwood, uma filha ilegítima de Lorde Blackwood, e o Dr. Jonathan Parker, médico da família.\n"
-    type_writer(mensagem2)
+    mensage = "Sarah Blackwood, uma filha ilegítima de Lorde Blackwood, e o Dr. Jonathan Parker, médico da família.\n"
+    type_writer(mensage)
     sleep(0.2)
-    mensagem22 = "E percebe que há mais membros bem próximos ao Lorde que também não tinham registros de presença\n"
-    type_writer(mensagem22)
+    mensage = "E percebe que há mais membros bem próximos ao Lorde que também não tinham registros de presença\n"
+    type_writer(mensage)
     sleep(0.2)
-    mensagem222 = "no momento do crime, descartando assim a exclusividade de suspeitas sobre Tyler e Alice.\n"
-    type_writer(mensagem222)
+    mensage = "no momento do crime, descartando assim a exclusividade de suspeitas sobre Tyler e Alice.\n"
+    type_writer(mensage)
     sleep(0.2)
-    mensagem3 = "Essas revelações lançam luz sobre possíveis motivos e conexões obscuras dentro da família. Sarah surge \n"
-    type_writer(mensagem3)
+    mensage = "Essas revelações lançam luz sobre possíveis motivos e conexões obscuras dentro da família. Sarah surge \n"
+    type_writer(mensage)
     sleep(0.2)
-    mensagem6 = "como uma figura enigmática, enquanto o acesso ilimitado de Dr. Parker à mansão o coloca sob \n"
-    type_writer(mensagem6)
+    mensage = "como uma figura enigmática, enquanto o acesso ilimitado de Dr. Parker à mansão o coloca sob \n"
+    type_writer(mensage)
     sleep(0.2)
-    mensagem66 = "suspeita. Com o número de suspeitos aumentando, Arthur se vê imerso em um labirinto de intrigas familiares, \n"
-    type_writer(mensagem66)
+    mensage = "suspeita. Com o número de suspeitos aumentando, Arthur se vê imerso em um labirinto de intrigas familiares, \n"
+    type_writer(mensage)
     sleep(0.2)
-    mensagem67 = "onde cada nova descoberta revela mais sobre os segredos sombrios que cercam o assassinato de Lorde Blackwood.\n"+ colors.END
-    type_writer(mensagem67)
+    mensage = "onde cada nova descoberta revela mais sobre os segredos sombrios que cercam o assassinato de Lorde Blackwood.\n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
 
-    mensagem6 =colors.DARKRED+ "\nOs suspeitos até então são:\n"+ colors.END
-    type_writer(mensagem6)
+    mensage =colors.DARKRED+ "\nOs suspeitos até então são:\n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
     #aqui termina o contexto inical
     #aqui começa a descrição dos suspeitos
@@ -115,11 +115,11 @@ def start_part3():
     print("4. Dr. Jonathan Parker: Médico da família e amigo íntimo de Lorde Blackwood. " + colors.END)
     sleep(0.2)
     #aqui termina a descrição dos suspeitos
-    mensagem7 = colors.BLUE + "\nSua missão é coletar pistas, interrogar os suspeitos e resolver o caso.\n"
-    type_writer(mensagem7)
+    mensage = colors.BLUE + "\nSua missão é coletar pistas, interrogar os suspeitos e resolver o caso.\n"
+    type_writer(mensage)
     sleep(0.2)
-    mensagem8 = "Vamos lá!\n" + colors.END
-    type_writer(mensagem8)
+    mensage = "Vamos lá!\n" + colors.END
+    type_writer(mensage)
     sleep(0.2)
     print("\n---------------------------------------------------------------------------------\n")
 

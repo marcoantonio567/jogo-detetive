@@ -66,37 +66,37 @@ def start_part4():
     print("\n---------------------------------------------------------------------------------\n")
     sleep(0.2)
     #aqui começa o contexto inicial
-    mensagem =colors.GREEN+ "> VOCÊ CHEGOU AO NÍVEL 4! <\n"
-    type_writer(mensagem)
-    mensagem1 =colors.RED + "Obs: se errar a acusação, volta para o inicio do jogo. \n"
-    type_writer(mensagem1)
+    mensage =colors.GREEN+ "> VOCÊ CHEGOU AO NÍVEL 4! <\n"
+    type_writer(mensage)
+    mensage =colors.RED + "Obs: se errar a acusação, volta para o inicio do jogo. \n"
+    type_writer(mensage)
     sleep(0.2)
-    mensagem11 =colors.RED + "-- O culpado é quem você menos espera -- \n"
-    type_writer(mensagem11)
+    mensage =colors.RED + "-- O culpado é quem você menos espera -- \n"
+    type_writer(mensage)
     sleep(0.2)
-    mensagem2 =colors.GREEN + "\n Dias após os acontecimentos anteriores\n"
-    type_writer(mensagem2)
+    mensage =colors.GREEN + "\n Dias após os acontecimentos anteriores\n"
+    type_writer(mensage)
     sleep(0.2)
-    mensagem3 =colors.GREEN+ "após um melhor depoimento de Sarah Blackwood  \n"+ colors.END
-    type_writer(mensagem3)
+    mensage =colors.GREEN+ "após um melhor depoimento de Sarah Blackwood  \n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
-    mensagem4 =colors.GREEN+ "ela não demonstrava nenhum indício de ter feito o crime \n"+ colors.END
-    type_writer(mensagem4)
+    mensage =colors.GREEN+ "ela não demonstrava nenhum indício de ter feito o crime \n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
-    mensagem5 =colors.GREEN+ "pois estava apaixonada pelo Dr. Jonathan Parker. \n"+ colors.END
-    type_writer(mensagem5)
+    mensage =colors.GREEN+ "pois estava apaixonada pelo Dr. Jonathan Parker. \n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
-    mensagem6 =colors.GREEN+ "o que também inocentava o Dr. Jonathan Parker, pois estava planejando se casar com a mesma\n"+ colors.END
-    type_writer(mensagem6)
+    mensage =colors.GREEN+ "o que também inocentava o Dr. Jonathan Parker, pois estava planejando se casar com a mesma\n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
-    mensagem6 =colors.GREEN+ "mas o Dr. Jonathan Parker revelou algo importante, um dos suspeitos estava mentindo \n"+ colors.END
-    type_writer(mensagem6)
+    mensage =colors.GREEN+ "mas o Dr. Jonathan Parker revelou algo importante, um dos suspeitos estava mentindo \n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
-    mensagem6 =colors.GREEN+ "Victor! mas não era apenas isso, havia mais alguem Eloy Casapequena.\n"+ colors.END
-    type_writer(mensagem6)
+    mensage =colors.GREEN+ "Victor! mas não era apenas isso, havia mais alguem Eloy Casapequena.\n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
-    mensagem6 =colors.DARKRED+ "\nOs suspeitos:\n"+ colors.END
-    type_writer(mensagem6)
+    mensage =colors.DARKRED+ "\nOs suspeitos:\n"+ colors.END
+    type_writer(mensage)
     sleep(0.2)
     #aqui termina o contexto inical
     #aqui começa a descrição dos suspeitos
@@ -106,11 +106,11 @@ def start_part4():
     sleep(0.2)
   
     #aqui termina a descrição dos suspeitos
-    mensagem7 = colors.BLUE + "\nSua missão é coletar pistas, interrogar os suspeitos e resolver o caso.\n"
-    type_writer(mensagem7)
+    mensage = colors.BLUE + "\nSua missão é coletar pistas, interrogar os suspeitos e resolver o caso.\n"
+    type_writer(mensage)
     sleep(0.2)
-    mensagem8 = "Vamos começar!\n" + colors.END
-    type_writer(mensagem8)
+    mensage = "Vamos começar!\n" + colors.END
+    type_writer(mensage)
     sleep(0.2)
     print("\n---------------------------------------------------------------------------------\n")
 

@@ -1,7 +1,7 @@
 from cores import colors
 from maquina import type_writer
 import time
-from animacoes import ascii_typing_animation , figlet_animation , bar_animation , bar_animation2
+from animations import ascii_typing_animation , figlet_animation , bar_animation , bar_animation2
 from historia_marco import start_part3
 from historia_julia import start_part1
 from historia_eville import start_part2
