@@ -1,7 +1,6 @@
 import pyfiglet
 import time
 from asciimatics import *
-import pyfiglet
 from alive_progress import alive_bar
 from rich.console import Console
 from rich.progress import track

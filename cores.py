@@ -2,7 +2,7 @@ import random
 import time
 import sys
 
-# Define os códigos de escape ANSI para cores
+# define the colors
 class colors:
     PURPLE = '\033[95m'
     CYAN = '\033[96m'
@@ -10,10 +10,8 @@ class colors:
     BLUE = '\033[94m'
     GREEN = '\033[92m'
     YELLOW = '\033[93m'
-    RED = '\033[91m'
-   
+    RED = '\033[91m' 
     END = '\033[0m'
-    
     WHITE = '\033[37m'
     MAGENTA = '\033[35m'
     ORANGE = '\033[33m'
@@ -40,6 +38,7 @@ class colors:
         return getattr(colors, color_name)
 
 
+# examples how to use the colors
 """print(colors.RED + 'Este texto será vermelho!' + colors.END)
 print(colors.BOLD + 'Este texto será em negrito!' + colors.END)
 print(colors.UNDERLINE + 'Este texto será sublinhado!' + colors.END)
